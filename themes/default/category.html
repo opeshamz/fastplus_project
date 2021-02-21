@@ -1,0 +1,30 @@
+{include file="header.html"}
+{include file="breadcrumb.html"}
+<div class="row">
+<div class="col-md-8 margin-top">
+<div class="section-box">
+<h4><span class="heading-font margin-bottom">{$category_category|html_decode}</span></h4>
+{if !empty($category_image)}
+<div class="category-image">
+<img src="upload/categories/{$category_image}" class="img-responsive" />
+</div>
+{/if}
+{'content_1'|get_ad:0}
+<div id="selected-news"></div>
+</div>
+{literal}
+<script>
+$(document).ready(function(){
+$.get("ajax.php?case=ajax_category_next_prev", { "page": 1, "category_id": "{/literal}{$category_id}{literal}", "main_id": "{/literal}{$category_main_id}{literal}" }, function(result){
+$('#selected-news').html(result);
+});	
+});
+</script>
+{/literal}
+</div>
+<div class="col-md-4 sidebar">
+{include file="sidebar.html"}
+</div>
+<div class="clear"></div>
+</div>
+{include file="footer.html"}

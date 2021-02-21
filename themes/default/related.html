@@ -1,0 +1,16 @@
+<div class="related-news">
+<h4 class="heading-font">{$lang_related_news}</h4>
+<ul>
+{section name=x loop=$related}
+<li class="col-sm-4">
+<a href="./news/{$related[x].title|html_decode|slug}?uid={$related[x].id}" title="{$related[x].title|html_decode}">
+<div class="related-image overlay-image">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$related[x].thumbnail|article_thumbnail:$related[x].source_id}" class="img-responsive" alt="{$related[x].title|html_decode}" />
+</div>
+<div>{$related[x].title|html_decode|truncate:50}</div>
+</a>
+</li>
+{/section}
+</ul>
+<div class="clear"></div>
+</div>

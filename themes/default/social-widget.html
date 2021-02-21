@@ -1,0 +1,13 @@
+{if $theme_display_social_widget eq 1}
+<div class="widget feedburner {if $theme_mobile_social_widget eq 0}hidden-xs{/if} {if $theme_tab_social_widget eq 0}hidden-sm{/if}">
+<h4 class="heading-font">{$lang_social_title}</h4>
+<div class="social-profiles">
+{if !empty($social_facebook_account)}<a href="{$social_facebook_account}" class="social-profile facebook-profile"><i class="fa fa-facebook fa-fw"></i> {$lang_social_facebook}</a>{/if}
+{if !empty($social_twitter_account)}<a href="{$social_twitter_account}" class="social-profile twitter-profile"><i class="fa fa-twitter fa-fw"></i> {$lang_social_twitter}</a>{/if}
+{if !empty($social_google_plus_account)}<a href="{$social_google_plus_account}" class="social-profile googleplus-profile"><i class="fa fa-google-plus fa-fw"></i> {$lang_social_google_plus}</a>{/if}
+{if !empty($social_youtube_account)}<a href="{$social_youtube_account}" class="social-profile youtube-profile"><i class="fa fa-youtube fa-fw"></i> {$lang_social_youtube}</a>{/if}
+{if !empty($social_vimeo_account)}<a href="{$social_vimeo_account}" class="social-profile vimeo-profile"><i class="fa fa-vimeo fa-fw"></i> {$lang_social_vimeo}</a>{/if}
+<a href="./rss.xml" class="social-profile rss-profile"><i class="fa fa-rss fa-fw"></i> {$lang_rss}</a>
+</div>
+</div>
+{/if}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<BASE href="{$general_siteurl}">	
+	<link rel="shortcut icon" type="image/png" href="{$general_siteurl}/themes/default/images/favicon.png"/>
+    <title>{$seo_title}</title>
+	<meta name="description" content="{$seo_description}">
+	<meta name="keywords" content="{$seo_keywords}">
+	{if $is_category eq 1 AND $page_number gt 0}
+	<link href="{$general_siteurl}/category/{$category_category|html_decode|slug}?cid={$category_id}" rel="canonical" />
+	{/if}
+	{if $is_news eq 1}
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="{$article_title|html_decode}">
+	<meta itemprop="description" content="{$seo_description}">
+	<meta itemprop="image" content="{$article_thumbnail_link}">
+	
+	<link rel="image_src" href="{$article_thumbnail_link}" />  
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="{$article_thumbnail_link}">
+	<meta name="twitter:site" content="{$general_siteurl}">
+	<meta name="twitter:title" content="{$article_title|html_decode}">
+	<meta name="twitter:description" content="{$seo_description}">
+	<meta name="twitter:creator" content="{$apis_twitter_account_username}">
+	<!-- Twitter summary card with large image must be at least 280x150px -->
+	<meta name="twitter:image:src" content="{$article_thumbnail_link}">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="{$article_title|html_decode}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="{$article_sitelink}" />
+	<meta property="og:image" content="{$article_thumbnail_link}" />
+	<meta property="og:description" content="{$seo_description}" />
+	<meta property="og:site_name" content="{$general_seo_title}" />
+	<meta property="article:published_time" content="{$article_datetime|get_meta_datetime}" />
+	<meta property="article:modified_time" content="{$article_datetime|get_meta_datetime}" />
+	<meta property="article:section" content="{$article_category_id|get_category}" />
+	<meta property="article:tag" content="{$article_tags}" />
+	<meta property="fb:admins" content="{$apis_facebook_admin_id}" /> 
+	{/if}
+    <link rel="stylesheet" href="themes/default/css/{$lang_language_direction|strtolower}/bootstrap.min.css">
+	<link rel="stylesheet" href="themes/default/css/{$lang_language_direction|strtolower}/bootstrap-theme.min.css">
+	{$google_font}
+	<link rel="stylesheet" href="themes/default/css/font-awesome.min.css">
+    <link rel="stylesheet" href="themes/default/css/{$lang_language_direction|strtolower}/style.css">
+	<script src="languages/{$general_site_language}/site.js"></script>
+	<script src="themes/default/js/jquery.min.js"></script>
+    <script src="themes/default/js/{$lang_language_direction|strtolower}/bootstrap.min.js"></script>
+	<script src="themes/default/js/jquery.lazyloadxt.js"></script>
+	<script src="themes/default/js/jquery.sticky-kit.min.js"></script>
+	<script src="themes/default/js/rrssb.min.js"></script>
+	<script src="themes/default/js/functions.js"></script>
+</head>
+<body>
+<div class="container full-container">
+<div class="top-menu">
+<div class="row">
+<ul class="col-md-8">
+<li><a href="./">{$lang_home}</a></li>
+{if $mail_enable_contact_page eq 1}
+<li><a href="./contact">{$lang_contact}</a></li>
+{/if}
+{section name=x loop=$pages}
+{if $pages[x].place eq 0}
+<li><a href="./page/{$pages[x].title|html_decode|slug}?pid={$pages[x].id}" title="{$pages[x].title|html_decode}">{$pages[x].title|html_decode}</a></li>
+{/if}
+{/section}
+{section name=x loop=$links}
+{if $links[x].place eq 0}
+<li>
+<a href="{$links[x].link}" target="{$links[x].target}" {if $links[x].nofollow eq 1}rel="nofollow"{/if} title="{$links[x].title|html_decode}">{$links[x].title|html_decode}</a>
+</li>
+{/if}
+{/section}
+</ul>
+<ul class="col-md-4 hidden-sm hidden-xs search-nav">
+<li class="search-form">
+	<form method="GET" action="./search">
+		<div class="input-group">
+			<input type="text" name="q" class="form-control" placeholder="{$lang_search}" {if isset($is_search) AND $is_search eq 1}value="{$q}"{/if} />
+			<span class="input-group-addon"><button type="submit" class="btn-link"><span class="fa fa-search"></span></button></span>
+		</div>
+	</form>
+</li>
+</ul>
+</div>
+</div>
+<div class="header">
+	
+		<div class="row">
+			<div class="col-md-3">
+				<div class="logo">
+					<a href="./" title="{$general_seo_title}">
+						<img src="themes/default/images/logo.png" class="img-responsive" alt="{$general_seo_title}" />
+					</a>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="header-ad">
+					{'header'|get_ad}
+				</div>
+			</div>
+		</div>
+	</div>
+{if $theme_display_megamenu eq 1}
+<nav class="navbar yamm navbar-inverse hidden-xs">
+      
+	  <div class="row">
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" id="megamenu">
+			{section name=x loop=$categories}
+			<li class="dropdown yamm-fw">
+			<a href="javascript:void();" id="{$categories[x].id}" data-toggle="dropdown" class="dropdown-toggle">{$categories[x].category} <b class="caret"></b></a>
+			<div class="dropdown-menu ajax-menu"></div>
+			</li>
+			{/section}
+          </ul>
+        </div>
+		</div>
+</nav>
+{/if}
+<nav class="navbar navbar-inverse {if $theme_display_megamenu eq 1}visible-xs{/if}" role="navigation">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#second-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				<span class="navbar-brand visible-xs">Categories</span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="second-menu">
+                <ul class="nav navbar-nav paragraph-font">
+                    {section name=x loop=$categories}
+					{if $categories[x].id|get_sub_categories eq 0}
+					<li {if $is_category eq 1 AND $category_id eq $categories[x].id}class="active"{/if}><a href="./category/{$categories[x].category|html_decode|slug}?cid={$categories[x].id}">{$categories[x].category}</a></li>
+					{else}
+					<li class="dropdown">
+					<a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">{$categories[x].category|html_decode} <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						{foreach name=x from=$categories[x].id|get_sub_categories key=id item=sub}
+							<li><a href="./category/{$sub.category|html_decode|slug}?cid={$sub.id}" title="{$sub.category|html_decode}">{$sub.category|html_decode}</a></li>
+						{/foreach}
+							<li class="divider"></li>
+							<li><a href="./category/{$categories[x].category|html_decode|slug}?cid={$categories[x].id}" title="{$categories[x].category}">{$lang_all} {$categories[x].category}</a></li>
+					</ul>
+					</li>
+					{/if}
+					{/section}
+                </ul>
+            </div><!--.nav-collapse -->
+		
+    </nav>
+	<div class="search-form hidden-md hidden-lg">
+	<form method="GET" action="./search">
+		<div class="input-group">
+			<input type="text" name="q" class="form-control" placeholder="{$lang_search}" {if isset($is_search) AND $is_search eq 1}value="{$q}"{/if} />
+			<span class="input-group-addon"><button type="submit" class="btn-link"><span class="fa fa-search"></span></button></span>
+		</div>
+	</form>
+	</div>

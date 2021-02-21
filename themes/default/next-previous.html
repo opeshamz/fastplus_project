@@ -1,0 +1,24 @@
+<div class="row">
+<div class="col-sm-6">
+{if $is_previous eq 1}
+<div class="previous-article">
+<div class="previous-image overlay-image">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$previous_thumbnail|article_thumbnail:$previous_source_id}" class="img-responsive" alt="{$previous_title|html_decode}" />
+</div>
+<h5>{$lang_article_previous}</h5>
+<a href="./news/{$previous_title|html_decode|slug}?uid={$previous_id}" class="paragraph-font" title="{$previous_title|html_decode}">{$previous_title|html_decode|truncate:50}</a>
+</div>
+{/if}
+</div>
+<div class="col-sm-6">
+{if $is_next eq 1}
+<div class="next-article">
+<div class="next-image overlay-image">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$next_thumbnail|article_thumbnail:$next_source_id}" class="img-responsive" alt="{$next_title|html_decode}" />
+</div>
+<h5>{$lang_article_next}</h5>
+<a href="./news/{$next_title|html_decode|slug}?uid={$next_id}" class="paragraph-font" title="{$next_title|html_decode}">{$next_title|html_decode|truncate:50}</a>
+</div>
+{/if}
+</div>
+</div>

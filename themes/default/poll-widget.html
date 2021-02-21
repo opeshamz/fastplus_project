@@ -1,0 +1,35 @@
+{if $polls_display_poll_widget eq 1}
+<div class="widget poll {if $theme_mobile_poll_widget eq 0}hidden-xs{/if} {if $theme_tab_poll_widget eq 0}hidden-sm{/if}">
+{if !empty($poll_image)}
+<div class="poll-image">
+<img src="upload/polls/{$poll_image}" class="img-responsive" alt="{$poll_question|html_decode}" />
+<span class="heading-font">{$poll_question|html_decode}</span>
+</div>
+{else}
+<div class="poll-question heading-font">
+{$poll_question|html_decode}
+</div>
+{/if}
+<div id="vote-result"></div>
+<div id="poll-result"></div>
+<div id="poll">
+<form method="POST" action="">
+<div class="poll-answers">
+<ul>
+{section name=x loop=$answers}
+<li class="radio">
+<input type="radio" name="answer" id="t{$answers[x].id}" value="{$answers[x].id}" {if $smarty.section.x.first}CHECKED{/if} /> 
+<label for="t{$answers[x].id}">{$answers[x].answer}</label>
+</li>
+{/section}
+</ul>
+</div>
+<div class="poll-result-buttons">
+<input type="hidden" name="poll_id" id="poll_id" value="{$poll_id}" />
+<button type="submit" name="vote" id="vote" class="btn btn-sm btn-success">{$lang_vote}</button>
+<a href="javascript:void();" onclick="javascript:PollShowResults({$poll_id});" class="poll-show-results">{$lang_results}</a>
+</div>
+</form>
+</div>
+</div>
+{/if}

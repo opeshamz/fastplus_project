@@ -1,0 +1,29 @@
+{include file="header.html"}
+{include file="breadcrumb.html"}
+<div class="row">
+<div class="col-md-8 margin-top">
+{if empty($q)}
+<div class="alert alert-warning">{$lang_insert_search_word}</div>
+{else}
+<div class="section-box">
+<h4><span class="heading-font margin-bottom">{$q|ucfirst}</span></h4>
+{'content_1'|get_ad:0}
+<div id="selected-news"></div>
+</div>
+{/if}
+{literal}
+<script>
+$(document).ready(function(){
+$.get("ajax.php?case=ajax_search_next_prev", { "page": 1, "q": "{/literal}{$q}{literal}" }, function(result){
+$('#selected-news').html(result);
+});	
+});
+</script>
+{/literal}
+</div>
+<div class="col-md-4 sidebar">
+{include file="sidebar.html"}
+</div>
+<div class="clear"></div>
+</div>
+{include file="footer.html"}

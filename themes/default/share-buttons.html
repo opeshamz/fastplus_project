@@ -1,0 +1,72 @@
+<div class="row">
+<div class="col-xs-12">
+<div class="article-share">
+<ul class="rrssb-buttons">
+        <li class="rrssb-email">
+          <a href="mailto:?subject={$article_title|html_decode}&amp;body={$article_sitelink}">
+            <span class="rrssb-icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_email}</span>
+          </a>
+        </li>
+        <li class="rrssb-facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={$article_sitelink}" class="popup">
+            <span class="rrssb-icon">
+              <i class="fa fa-facebook"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_facebook}</span>
+          </a>
+        </li>
+        <li class="rrssb-linkedin">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={$article_sitelink}&amp;title={$article_title|html_decode}&amp;summary={$article_details|html_decode|strip_tags|truncate:100}" class="popup">
+            <span class="rrssb-icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_linkedin}</span>
+          </a>
+        </li>
+        <li class="rrssb-twitter">
+          <a href="https://twitter.com/intent/tweet?text={$article_title|html_decode} {$article_sitelink}" class="popup">
+            <span class="rrssb-icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_twitter}</span>
+          </a>
+        </li>
+        <li class="rrssb-googleplus">
+          <a href="https://plus.google.com/share?url={$article_title|html_decode} {$article_sitelink}" class="popup">
+            <span class="rrssb-icon">
+              <i class="fa fa-google-plus"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_google_plus}</span>
+          </a>
+        </li>
+        <li class="rrssb-pinterest">
+          <a href="http://pinterest.com/pin/create/button/?url={$article_sitelink}&amp;media={$article_thumbnail_link}&amp;description={$article_title|html_decode}">
+            <span class="rrssb-icon">
+              <i class="fa fa-pinterest"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_pinterest}</span>
+          </a>
+        </li>
+		<li class="rrssb-vk">
+          <a href="http://vk.com/share.php?url={$article_sitelink}">
+            <span class="rrssb-icon">
+              <i class="fa fa-vk"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_vk}</span>
+          </a>
+        </li>
+		<!--<li class="visible-xs rrssb-whatsapp">
+          <a href="whatsapp://send?text={$whatsapp_share}" data-action="share/whatsapp/share">
+            <span class="rrssb-icon">
+              <i class="fa fa-whatsapp"></i>
+            </span>
+            <span class="rrssb-text">{$lang_share_whatsapp}</span>
+          </a>
+        </li>-->
+      </ul>
+</div>
+</div>
+</div>

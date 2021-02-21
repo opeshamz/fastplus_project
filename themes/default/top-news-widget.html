@@ -1,0 +1,20 @@
+{if $theme_display_top_news_widget eq 1}
+<div class="row {if $theme_mobile_topnews_widget eq 0}hidden-xs{/if} {if $theme_tab_topnews_widget eq 0}hidden-sm{/if}">
+{section name=x loop=$top}
+<div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+<div class="single-trending-item-image">
+<a href="./news/{$top[x].title|html_decode|slug}?uid={$top[x].id}" title="{$top[x].title|html_decode}">
+<div class="overlay-image max-width">
+<span class="trending-number">
+{if $smarty.section.x.first}{counter start=1 skip=1}{else}{counter}{/if}
+</span>
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$top[x].thumbnail|article_thumbnail:$top[x].source_id}" class="img-responsive" alt="{$top[x].title|html_decode}" />
+</div>
+<div class="single-trending-item-title heading-font">{$top[x].title|html_decode}</div>
+</a>
+</div>
+</div>
+{/section}
+</div>
+{/if}
+

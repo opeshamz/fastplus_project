@@ -1,0 +1,43 @@
+{include file="header.html"}
+{include file="breadcrumb.html"}
+<div class="row">
+<div class="col-md-8 margin-top">
+<div class="section-box">
+<h4><span class="heading-font">{$lang_news_archive_for} {$day}-{$month}-{$year}</span></h4>
+{'content_1'|get_ad:0}
+<div id="selected-news"></div>
+</div>
+{if $theme_pagination_mode eq 'scroll' OR $theme_pagination_mode eq 'infinite'}
+{literal}
+<script>
+	$(document).ready(function() {
+		$('#selected-news').scrollPagination({
+			nop     	: 12,
+			offset  	: 0,
+			isthere   	: '{/literal}{$lang_pagination_more}{literal}', 
+			error   	: '{/literal}{$lang_pagination_no_more}{literal}', 
+			ajax_file	: 'ajax.php?case=archive_news&d={/literal}{$day}{literal}&m={/literal}{$month}{literal}&y={/literal}{$year}{literal}',
+			delay   	: 500, 
+			scroll  	: {/literal}{if $theme_pagination_mode eq 'scroll'}false{else}true{/if}{literal}
+		});
+	});
+</script>
+{/literal}
+{else}
+{literal}
+<script>
+$(document).ready(function(){
+$.get("ajax.php?case=ajax_archive_next_prev", { "page": 1, "d": "{/literal}{$day}{literal}", "m": "{/literal}{$month}{literal}", "y": "{/literal}{$year}{literal}" }, function(result){
+$('#selected-news').html(result);
+});	
+});
+</script>
+{/literal}
+{/if}
+</div>
+<div class="col-md-4 sidebar">
+{include file="sidebar.html"}
+</div>
+<div class="clear"></div>
+</div>
+{include file="footer.html"}

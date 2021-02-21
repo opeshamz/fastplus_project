@@ -1,0 +1,39 @@
+<script src="themes/default/js/jquery.lazyloadxt.js"></script>
+{section name=x loop=$news}
+<div class="section-news">
+<div class="col-md-5 col-sm-5">
+<div class="section-news-thumbnail overlay-image">
+<a href="./news/{$news[x].title|html_decode|slug}?uid={$news[x].id}" title="{$news[x].title|html_decode}">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$news[x].thumbnail|article_thumbnail:$news[x].source_id}" class="img-responsive" alt="{$news[x].title|html_decode}" />
+</a>
+</div>
+</div>
+<div class="col-md-7 col-sm-7">
+<span class="category-span" style="color:{$news[x].category_id|get_category_color};">{$news[x].category_id|get_category|html_decode}</span>
+<a href="./news/{$news[x].title|html_decode|slug}?uid={$news[x].id}" class="heading-font" title="{$news[x].title|html_decode}">{$news[x].title|html_decode}</a>
+<p class="paragraph-font">{$news[x].details|html_decode|strip_tags|truncate:200} <a href="./news/{$news[x].title|html_decode|slug}?uid={$news[x].id}" title="{$news[x].title|html_decode}">{$lang_more}</a></p>
+</div>
+<div class="clear"></div>
+</div>
+{/section}
+{literal}
+<script>
+$(function() {
+$(".paginations li.active").click(function() {
+var page = $(this).attr('rel');
+$.get("ajax.php?case=ajax_news_next_prev", { "page": page }, function(data){
+$('html, body').animate({
+        scrollTop: $("#section-news").offset().top
+}, 500);
+$('#selected-news').html(data);
+});	
+});
+});
+</script>
+{/literal}
+
+{if $count gt $per_page}
+<div class="ajax-news-paginations">
+{$paginations}
+</div>
+{/if}

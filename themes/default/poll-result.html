@@ -1,0 +1,20 @@
+<div class="poll-answers">
+<ul>
+{section name=x loop=$answers}
+{assign var=votes value=$answers[x].id|poll_answer_votes}
+<li>
+<div class="result-answer">{$answers[x].answer} <span>(<b>{$votes}</b> {$lang_votes})</span></div>
+ <div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{$votes|poll_answer_votes_percent:$total_votes}" aria-valuemin="0" aria-valuemax="100" style="width:{$votes|poll_answer_votes_percent:$total_votes}%">
+    {$votes|poll_answer_votes_percent:$total_votes}%
+  </div>
+</div>
+</li>
+{/section}
+</ul>
+</div>
+<div class="poll-result-buttons">
+<span class="total-voters">{$lang_total_voters} : <b>{$total_votes}</b></span>
+<a href="javascript:void();" onclick="HideResults();" class="poll-show-results">{$lang_hide_results}</a>
+</div>
+

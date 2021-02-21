@@ -1,0 +1,12 @@
+{if $theme_display_sections_categories eq 1}
+{foreach name=x from=$theme_sections_categories|get_selected_categories key=id item=sections}
+{if $sections.id|news_in_category:4 neq 0}
+<div class="section-box">
+<h4 class="heading-font" style="background:{$sections.color};">{$sections.category} <a href="./category/{$sections.category|html_decode|slug}?cid={$sections.id}">{$lang_browse_all}</a></h4>
+<div class="news-section-content">
+{include file="news-section-style{$theme_sections_content_style}.html"}
+</div>
+</div>
+{/if}
+{/foreach}
+{/if}

@@ -1,0 +1,16 @@
+
+{foreach name=x from=$sections.id|news_in_section:$theme_sections_content_style:$theme_sections_content_type_rss:$theme_sections_content_type_video key=id item=news}
+<div class="col-md-4">
+<div class="featured-item-sections">
+<a href="./news/{$news.title|html_decode|slug}?uid={$news.id}" title="{$news.title|html_decode}">
+<div class="overlay-image">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$news.thumbnail|article_thumbnail:$news.source_id}" class="img-responsive" alt="{$news.title|html_decode}" />
+</div>
+<span class="category-span" style="color:{$sections.color};">{if $news.sub_category_id eq 0}{$news.category_id|get_category|html_decode}{else}{$news.sub_category_id|get_category|html_decode}{/if}</span>
+<span>{$news.title|html_decode|truncate:60}</span>
+</a>
+<p class="visible-sm paragraph-font">{$news.details|html_decode|strip_tags|truncate:200}</p>
+</div>
+</div>
+{/foreach}
+<div class="clear"></div>

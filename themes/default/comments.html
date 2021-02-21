@@ -1,0 +1,36 @@
+{if $comments_display_comments eq 1}
+{if $comments_comments_type eq 'disqus' AND !empty($comments_disques_shortname)}
+<div id="disqus_thread"></div>
+{literal}
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = '{/literal}{$comments_disques_shortname}{literal}';
+    var disqus_identifier = '{/literal}{$article_id}{literal}';
+    var disqus_title = '{/literal}{$article_title}{literal}';
+    var disqus_url = '{/literal}{$article_sitelink}{literal}';
+	
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+{/literal}
+{/if}
+{if $comments_comments_type eq 'facebook'}
+<div id="fb-root"></div>
+{literal}
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=213343955399941";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{/literal}
+<div id="facebook-comments">
+<div class="fb-comments" data-href="{$article_sitelink}" data-width="100%" data-order-by="{$comments_facebook_order_by}" data-colorscheme="{$comments_facebook_colorscheme}" data-numposts="{$comments_facebook_num_posts}"></div>
+</div>
+{/if}
+{/if}

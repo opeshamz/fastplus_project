@@ -1,0 +1,81 @@
+{include file="header.html"}
+{include file="breadcrumb.html"}
+<div class="row">
+<div class="col-md-8 the-body">
+<div class="article-page" itemscope itemtype="http://schema.org/NewsArticle">
+<h1 class="heading-font" itemprop="headline"><a href="{$article_sitelink}">{$article_title|html_decode}</a></h1>
+<div class="article-meta single-article">
+<span><i class="fa fa-calendar"></i>{$article_datetime|get_datetime:1}</span>
+<span><i class="fa fa-folder"></i>
+<a href="./category/{$article_category_id|get_category|html_decode|slug}?cid={$article_category_id}" title="{$article_category_id|get_category}">{$article_category_id|get_category}</a>
+{if $article_sub_category_id neq 0}
+{$lang_arrow} <a href="./category/{$article_sub_category_id|get_category|html_decode|slug}?cid={$article_sub_category_id}" title="{$article_sub_category_id|get_category}">{$article_sub_category_id|get_category}</a>
+{/if}
+</span>
+{if $article_source_type eq 'video'}
+<span><i class="fa fa-clock-o"></i> {$article_duration|get_duration}</span>
+{/if}
+<span><i class="fa fa-bar-chart"></i> {$article_hits}</span>
+<span class="pull-right" id="article-vote">
+<a href="javascript:void();" class="article-vote-up article-vote-up-class {if $article_id|is_voted:$ip:'up' eq 1}voted-up{/if}" rel="{$article_id}" data-toggle="tooltip" data-placement="top" title="{$lang_ilike}"><i class="fa fa-thumbs-up"></i><small>{$article_votes_up}</small></a>
+<a href="javascript:void();" class="article-vote-down article-vote-down-class {if $article_id|is_voted:$ip:'down' eq 1}voted-down{/if}" rel="{$article_id}" data-toggle="tooltip" data-placement="top" title="{$lang_idislike}"><i class="fa fa-thumbs-down"></i><small>{$article_votes_down}</small></a>
+</span>
+<meta itemprop="datePublished" content="{$article_datetime|get_meta_datetime}"/>
+<meta itemprop="dateModified" content="{$article_datetime|get_meta_datetime}"/>
+</div>
+<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="hidden">
+    <img src="{$article_thumbnail|article_thumbnail:$article_source_id}" />
+    <meta itemprop="url" content="{$article_thumbnail|article_thumbnail:$article_source_id}">
+
+</div>
+
+{if $article_source_type eq 'video'}
+<div class="video-embed-iframe">
+<div class="embed-responsive embed-responsive-16by9">
+{if $article_source_domain eq 'youtube'}
+<iframe src="http://www.youtube.com/embed/{$article_video_id}" allowfullscreen></iframe>
+{elseif $article_source_domain eq 'vimeo'}
+<iframe src="https://player.vimeo.com/video/{$article_video_id}"></iframe>
+{else}
+<iframe src="http://www.dailymotion.com/embed/video/{$article_video_id}"></iframe>
+{/if}
+</div>
+</div>
+{else}
+{if !empty($article_thumbnail) AND $theme_display_featured_image eq 1}
+<div class="article-image">
+<div class="overlay-image maximum">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$article_thumbnail|article_thumbnail:$article_source_id}" class="img-responsive" alt="{$article_title|html_decode}" />
+</div>
+</div>
+{/if}
+{/if}
+<div class="article-content paragraph-font" itemprop="articleBody">
+{$article_details|process_content:$article_source_id}
+</div>
+<div class="tags-cloud">
+{foreach $tags AS $h}
+<a href="./search?q={$h|html_decode|slug}" class="btn btn-default btn-xs" title="{$h|html_decode}"><i class="fa fa-tag"></i> {$h|html_decode}</a>
+{/foreach}
+</div>
+{include file="share-buttons.html"}
+</div>
+{'content_1'|get_ad:1}
+{if $article_source_type eq 'rss' AND !empty($article_permalink)}
+<div class="read-more paragraph-font">
+<a href="{$article_permalink}{$article_source_id|get_referral}" target="_NEW" rel="nofollow">{$lang_read_the_rest}<br />
+<b>{$article_permalink|get_domain}</b>
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+{/if}
+{include file="next-previous.html"}
+{include file="related.html"}
+{'content_2'|get_ad:1}
+{include file="comments.html"}
+</div>
+<div class="col-md-4 sidebar">
+{include file="sidebar.html"}
+</div>
+</div>
+{include file="footer.html"}

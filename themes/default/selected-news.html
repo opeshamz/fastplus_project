@@ -1,0 +1,13 @@
+<div class="section-box" id="section-news">
+<h4 class="heading-font margin-bottom">{$lang_recently_added}</h4>
+<div id="selected-news"></div>
+</div>
+{literal}
+<script>
+$(document).ready(function(){
+$.get("ajax.php?case=ajax_news_next_prev", { "page": 1 }, function(result){
+$('#selected-news').html(result);
+});	
+});
+</script>
+{/literal}

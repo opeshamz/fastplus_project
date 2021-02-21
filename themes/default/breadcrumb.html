@@ -1,0 +1,81 @@
+{if $theme_display_breadcrumb eq 1}
+{if $is_home neq 1}
+<div class="breadcrumb hidden-sm hidden-xs" itemscope itemtype="https://schema.org/BreadcrumbList">
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a itemprop="item" itemtype="https://schema.org/WebPage" href="{$general_siteurl}">
+		<span itemprop="name"><i class="fa fa-home"></i> {$lang_home}</span>
+	</a>
+		<meta itemprop="position" content="1" />
+	   /
+	</div>
+	{if $is_news eq 1}	
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a itemprop="item" itemtype="https://schema.org/WebPage" href="./category/{$article_category_id|get_category|html_decode|slug}?cid={$article_category_id}">
+		<span itemprop="name">{$article_category_id|get_category|html_decode}</span>
+	</a>
+		<meta itemprop="position" content="2" />
+	   /
+	</div>  
+	{if $article_sub_category_id neq 0}
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a itemprop="item" itemtype="https://schema.org/WebPage" href="./category/{$article_sub_category_id|get_category|html_decode|slug}?cid={$article_sub_category_id}">
+		<span itemprop="name">{$article_sub_category_id|get_category|html_decode}</span>
+	</a>
+		<meta itemprop="position" content="3" />
+	   /
+	</div>  
+	{/if}
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a itemprop="item" itemtype="https://schema.org/WebPage" href="{$article_sitelink}">
+		<span itemprop="name">{$article_title|html_decode}</span>
+	</a>
+		{if $article_sub_category_id neq 0}<meta itemprop="position" content="4" />{else}<meta itemprop="position" content="3" />{/if}
+	  
+	</div>
+	{elseif $is_category eq 1}
+	{if $category_main_id gt 0}
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a href="./category/{$main_category_category|html_decode|slug}?cid={$main_category_id}" itemprop="item" itemtype="https://schema.org/WebPage">
+		<span itemprop="name">{$main_category_category|html_decode}</span>
+	</a>
+		<meta itemprop="position" content="2" />
+	   /
+	</div> 
+	{/if}	
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a href="./category/{$category_category|html_decode|slug}?cid={$category_id}" itemprop="item" itemtype="https://schema.org/WebPage">
+		<span itemprop="name">{$category_category|html_decode}</span>
+	</a>
+		{if $category_main_id gt 0}<meta itemprop="position" content="3" />{else}<meta itemprop="position" content="2" />{/if}
+	  
+	</div>
+	{elseif $is_search eq 1}
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a href="./search?q={$q}" itemprop="item" itemtype="https://schema.org/WebPage">
+		<span itemprop="name">{$lang_search_for} {$q|html_decode|ucfirst}</span>
+	</a>
+		<meta itemprop="position" content="2" />
+	  
+	</div>
+	{elseif $is_archive eq 1}
+	<div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+	  <a href="./archive?d={$day}&m={$month}&y={$year}" itemprop="item" itemtype="https://schema.org/WebPage">
+		<span itemprop="name">{$lang_news_archive_for} {$day}-{$month}-{$year}</span>
+	</a>
+		<meta itemprop="position" content="2" />
+	  
+	</div>
+	{elseif $is_page eq 1}
+	<div itemprop="itemListElement" itemscope
+		itemtype="https://schema.org/ListItem">
+	  <a href="./page/{$page_title|html_decode|slug}?pid={$page_id}" itemprop="item" itemtype="https://schema.org/WebPage">
+		<span itemprop="name">{$page_title|html_decode}</span>
+	</a>
+		<meta itemprop="position" content="2" />
+	  
+	</div>
+	{/if}
+</div>
+{/if}
+{/if}
+

@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteRule ^category/(.*)$ category.php?slug=$1
+RewriteRule ^news/(.*)$ news.php?slug=$1
+RewriteRule ^search(.*)$ search.php?q=$1
+RewriteRule ^page/(.*)$ page.php?slug=$1
+RewriteRule ^rss.xml$ rss.php
+RewriteRule ^archive$ archive.php
+RewriteRule ^sitemap-(.*).xml$ sitemap.php?id=$1
+RewriteRule ^categories-sitemap.xml$ sitemap.php?case=categories
+RewriteRule ^contact$ contact.php

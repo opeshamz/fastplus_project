@@ -1,0 +1,35 @@
+<div class="megamenu-news">
+<h3 class="heading-font">{$category_category} <a href="./category/{$category_category|html_decode|slug}?cid={$category_id}" class="pull-right label label-success" title="{$category_category|html_decode}">{$lang_browse_all}</a></h3>
+<div class="col-sm-3">
+{if $sub_categories neq 0}
+<div class="megamenu-subcategories">
+<ul>
+{section name=x loop=$sub_categories}
+<li><a href="./category/{$sub_categories[x].category|html_decode|slug}?cid={$sub_categories[x].id}" title="{$sub_categories[x].category|html_decode}">{$sub_categories[x].category|html_decode}</a></li>
+{/section}
+</ul>
+</div>
+{/if}
+</div>
+
+<div class="col-sm-9">
+<div class="row">
+{section name=x loop=$news}
+<div class="col-lg-4 col-md-4 col-sm-6">
+<div class="product menu-category">
+	<div class="product-image">
+		<a href="./news/{$news[x].title|html_decode|slug}?uid={$news[x].id}" title="{$news[x].title|html_decode}">
+			<div class="max-width">
+			<img src="{$news[x].thumbnail|article_thumbnail:$news[x].source_id}" class="img-responsive" alt="{$news[x].title|html_decode}" />
+			</div>
+			<div class="menu-category-name">{$news[x].title|html_decode|truncate:60}</div>
+		</a>
+	</div> 
+</div>
+</div>
+{sectionelse}
+<div class="col-xs-12"><div class="alert alert-warning">{$lang_no_category_results}</div></div>
+{/section}
+</div>
+</div>
+</div>

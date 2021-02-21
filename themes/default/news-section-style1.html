@@ -1,0 +1,38 @@
+
+{foreach name=x from=$sections.id|news_in_section:$theme_sections_content_style:$theme_sections_content_type_rss:$theme_sections_content_type_video key=id item=news}
+{if $smarty.foreach.x.first}
+<div class="big-first-section">
+<div class="col-md-6">
+<div class="single-featured-item">
+<div class="single-featured-item-image">
+<a href="./news/{$news.title|html_decode|slug}?uid={$news.id}" title="{$news.title|html_decode}">
+<div class="overlay-image max-width">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$news.thumbnail|article_thumbnail:$news.source_id}" class="img-responsive" alt="{$news.title|html_decode}" />
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<span class="category-span" style="color:{$sections.color};">{if $news.sub_category_id eq 0}{$news.category_id|get_category|html_decode}{else}{$news.sub_category_id|get_category|html_decode}{/if}</span>
+<div><a href="./news/{$news.title|html_decode|slug}?uid={$news.id}" class="heading-font" title="{$news.title|html_decode}">{$news.title|html_decode}</a></div>
+<p class="paragraph-font">{$news.details|html_decode|strip_tags|truncate:300}</p>
+</div>
+<div class="clear"></div>
+</div>
+{else}
+<div class="col-md-4">
+<div class="featured-item-sections">
+<a href="./news/{$news.title|html_decode|slug}?uid={$news.id}" title="{$news.title|html_decode}">
+<div class="overlay-image">
+<img {if $theme_allow_lazyload eq 1}data-{/if}src="{$news.thumbnail|article_thumbnail:$news.source_id}" class="img-responsive" alt="{$news.title|html_decode}" />
+</div>
+<span class="category-span" style="color:{$sections.color};">{if $news.sub_category_id eq 0}{$news.category_id|get_category|html_decode}{else}{$news.sub_category_id|get_category|html_decode}{/if}</span>
+<span>{$news.title|html_decode|truncate:70}</span>
+</a>
+<p class="visible-sm paragraph-font">{$news.details|html_decode|strip_tags|truncate:100}</p>
+</div>
+</div>
+{/if}
+{/foreach}
+<div class="clear"></div>

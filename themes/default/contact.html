@@ -1,0 +1,41 @@
+{include file="header.html"}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="row">
+<div class="col-md-8 the-body">
+<div class="contact-box widget">
+<h3 class="heading-font"><i class="fa fa-envelope"></i> {$lang_contact}</h3>
+{if $mail_enable_contact_page eq 0}
+<div class="alert alert-warning">{$lang_contact_disabled}</div>
+{else}
+{if isset($message)}{$message}{/if}
+<form method="POST" action="">
+		<div class="form-group">
+			<label for="name">{$lang_name} <span>*</span></label>
+			<input type="text" class="form-control" name="name" id="name" />
+		</div>
+		<div class="form-group">
+			<label for="email">{$lang_email} <span>*</span></label>
+			<input type="text" class="form-control" name="email" id="email" />
+		</div>
+		<div class="form-group">
+			<label for="title">{$lang_title} <span>*</span></label>
+			<input type="text" class="form-control" name="title" id="title" />
+		</div>
+		<div class="form-group">
+			<label for="content">{$lang_content} <span>*</span></label>
+			<textarea class="form-control" name="content" id="content" rows="5" ></textarea>
+		</div>
+		<div class="form-group">
+			<div class="g-recaptcha" data-sitekey="{$api_recaptcha_public}"></div>
+			</div>
+		<button type="submit" name="submit" class="btn btn-primary">{$lang_submit}</button>
+		
+</form>
+{/if}
+</div>
+</div>
+<div class="col-md-4 sidebar">
+{include file="sidebar.html"}
+</div>
+</div>
+{include file="footer.html"}

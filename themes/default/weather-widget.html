@@ -1,0 +1,12 @@
+{if $weather_display_weather_widget eq 1}
+<div class="widget weather {if $theme_mobile_weather_widget eq 0}hidden-xs{/if} {if $theme_tab_weather_widget eq 0}hidden-sm{/if}">
+<h4 class="heading-font">{$lang_weather_title}
+<select name="weather" class="weather-menu">
+{section name=x loop=$cities}
+<option value="{$cities[x].id}">{$cities[x].city}</option>
+{/section}
+</select>
+</h4>
+<div id="weather"></div>
+</div>
+{/if}
