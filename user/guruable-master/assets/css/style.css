@@ -65,7 +65,27 @@ p {
   color: #000;
   text-align: justify;
 }
+.error-field {
+	border: 1px solid #d96557;
+}
 
+.error:before {
+	content: '*';
+	padding: 0 3px;
+	color: #D8000C;
+}
+
+.error-msg {
+	padding-top: 10px;
+	color: #D8000C;
+	text-align: center;
+}
+
+.success-msg {
+    padding-top: 10px;
+	color: #176701;
+	text-align: center;
+}
 /**====== sign up form end ======**/
 
 /**  =====================

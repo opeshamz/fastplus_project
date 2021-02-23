@@ -24,10 +24,11 @@ function test_input($data) {
 
  
 
-if ($_SERVER['REQUEST_METHOD'] == POST && isset($_POST['submit_button'])){
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_button'])){
     $username = test_input($_POST["username"]);
     $email = test_input($_POST["email"]);
     $password = test_input($_POST["password"]);
+    $confirm_password = $_POST["confirm-password"];
     $news = test_input($_POST["news"]);
     $password_crypt=md5($password);
     $sqlemail = "SELECT email  FROM user where email = '$email'";
@@ -46,9 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] == POST && isset($_POST['submit_button'])){
 
   }
 
-   $sql1="INSERT INTO user (username,email,password,news) VALUES ('$username', '$email', '$password_crypt',$news)";
-        $result1= $con->query($sql1); die("Could Not Perform the Query");
-         $sucess = "Registration sucessful kindly login"
+   $sqlreg="INSERT INTO user (username,email,password,news) VALUES ('$username', '$email', '$password_crypt',$news)";
+        $result1= $con->query($sqlreg);
+         $sucess = "Registration sucessful kindly login";
+        
   
 }
 

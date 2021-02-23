@@ -31,6 +31,11 @@ include("signup.php");
     <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script>
+        if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 </head>
 
 <body class="fix-menu">
@@ -59,7 +64,8 @@ include("signup.php");
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="signup-card card-block auth-body mr-auto ml-auto">
-                        <form class="md-float-material" method="post" action=""  id="signupform">
+                        <form class="md-float-material" method="post" action=""  
+                        id="signupform" onsubmit="return signupValidation()">
                             <div class="text-center">
                                 <img src="assets/images/auth/logo-dark.png" alt="logo.png">
                             </div>
@@ -68,28 +74,30 @@ include("signup.php");
                                     <div class="col-md-12">
                                         <h3 class="text-center txt-primary">Sign up. It is fast and easy.</h3>
                                     </div>
+                                    <div class="error-msg" id="error-msg"><?php  echo $sucess; ?></div>
                                 </div>
+                                
                                 <hr/>
                                 <div class="mb-1">
-                                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                                    <input type="name"  name="username"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" minlength="5"  placeholder="Choose Username" required>
+                                    <label for="exampleInputName" class="form-label">Username</label>
+                                    <input type="name"  name="username"class="form-control" id="username"  minlength="5"  placeholder="Choose Username" required>
                                     
                                   </div>
 
                                   <div class="mb-1">
                                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Your Email Address" required>
+                                    <input type="email"  name="email" class="form-control" id="email1"   placeholder="Your Email Address" required>
                                    
                                   </div>
                                   <div class="mb-1">
-                                    <label for="exampleInputEmail1" class="form-label" >Password</label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Choose Password" minlength="8" required >
+                                    <label for="exampleInputPassword" class="form-label" >Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Choose Password" minlength="2" required >
                                     
                                   </div>
                                 
                                   <div class="mb-1">
-                                    <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
-                                    <input type="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm Password" minlength="8" required>
+                                    <label for="exampleInputPasswordConfirm" class="form-label">Confirm Password</label>
+                                    <input type="password" name="confirm-password" id="confirm-password"  class="form-control" placeholder="Confirm Password" minlength="2" required>
                                     
                                   </div>
                                
@@ -97,7 +105,7 @@ include("signup.php");
                                     <div class="col-md-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
-                                                <input type="checkbox" value="" >
+                                                <input type="checkbox" id="terms_and_conditions"value="yes" >
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
                                                 <span class="text-inverse">I read and accept <a href="#">Terms &amp; Conditions.</a></span>
                                             </label>
@@ -115,7 +123,7 @@ include("signup.php");
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" name="submit_button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>
+                                        <button type="submit"  id="submit_button" name="submit_button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>
                                     </div>
                                 </div>
                                 <hr/>
@@ -197,32 +205,6 @@ include("signup.php");
     <script type="text/javascript" src="assets/js/modernizr/css-scrollbars.js"></script>
     <script type="text/javascript" src="assets/js/common-pages.js"></script>
 </body>
-<script>
-    function signupValidation() {
-        var valid = true;
-    
-       
-        $("#password").removeClass("error-field");
-        $("#confirm-password").removeClass("error-field");
 
-        var Password = $('#signup-password').val();
-        var ConfirmPassword = $('#confirm-password').val();
-       
-    
-        $("#username-info").html("").hide();
-        $("#email-info").html("").hide();
-    
-       
-        if(Password != ConfirmPassword){
-            $("#error-msg").html("Both passwords must be same.").show();
-            valid=false;
-        }
-        if (valid == false) {
-            $('.error-field').first().focus();
-            valid = false;
-        }
-        return valid;
-    }
-    </script>
 
 </html>
