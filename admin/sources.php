@@ -52,9 +52,15 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New Source
-				<a href="sources.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
+				<a href="sources.php" class="btn btn-default btn-sm"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
@@ -173,6 +179,14 @@ $message = notification('danger','Error Happened.');
 		</div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
 <?php
 break;
 case 'edit';
@@ -223,7 +237,7 @@ $message = notification('danger','Error Happened.');
 }
 $source = $general->source($id);
 ?>
-			<div class="page-header page-heading">
+			<div class="page-header page-heading ">
 				<h1>Edit Source
 				<a href="sources.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
@@ -371,11 +385,18 @@ $message = notification('danger','Error Happened.');
 }
 $source = $general->source($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Source
 				<a href="sources.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
+			<div class="container">
 			<?php if (isset($message)) {echo $message;} ?>
 		  <form role="form" method="POST" action="">
 		  <?php if (empty($done) AND get_source_news($id) > 0) { ?>
@@ -390,15 +411,24 @@ $source = $general->source($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<!--
 <div class="page-header page-heading">
 	<h1><i class="fa fa-rss"></i> RSS Sources
 	<a href="sources.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
 	</h1>
-</div>
+</div>-->
 <?php
 $page = 1;
 $size = 20;
@@ -407,7 +437,33 @@ $sqls = "SELECT * FROM sources WHERE source_type='rss' ORDER BY id DESC";
 $query = $mysqli->query($sqls);
 $total_records = $query->num_rows;
 if ($total_records == 0) {
-echo notification('warning','You didn\'t add any Source. <a href="?case=add" class="alert-link">Add new Source</a>.');
+echo '<div class="pcoded-content">
+<div class="pcoded-inner-content">
+	<!-- Main-body start -->
+	<div class="main-body">
+		<div class="page-wrapper">
+<div class="page-header card">
+<div class="row align-items-end">
+	<div class="col-lg-8">
+		<div class="page-header-title">
+			<i class="icofont icofont-table bg-c-blue"></i>
+			<div class="d-inline">
+				<h4>You didn\'t add any Source</h4>
+				<button type="button" class="btn btn-primary"><a href="?case=add" class="alert-link">Add new Source</a></button>
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>';
+
 } else {
 $pagination = new Pagination();
 $pagination->setLink("?page=%s");
@@ -417,7 +473,16 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM sources WHERE source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
-<table width="100%" cellpadding="5" cellspacing="0" class="table">
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
+<div class="table-responsive" >
+<div class="card-block table-border-style">
+
+<table class="table">
     <thead>
         <tr>
 			<th>Source</th>
@@ -460,9 +525,17 @@ while ($row = $q->fetch_assoc()) {
 ?>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 echo $pagination->create_links();
 }
 } 
-include('footer.php');
+//include('footer.php');
 ?>

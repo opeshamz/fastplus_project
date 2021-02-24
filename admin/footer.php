@@ -1,7 +1,7 @@
 </div>
 </div>
 <div class="footer">
-Powered By <b>RSS-Script Light Version</b>
+Powered By <b>viralgrove</b>
 </div>
 </div>
 </body>

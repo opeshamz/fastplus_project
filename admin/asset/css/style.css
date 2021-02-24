@@ -26,17 +26,15 @@ File: style.css
 /**  =====================
       Custom css start
 ==========================  **/
-*{
-  background-color: red  !important
-}
+
 body {
-  background-color:;
+
   font-size: 0.875em;
   overflow-x: hidden;
   color: #353c4e;
   font-family: "Open Sans", sans-serif;
   margin: 0px;
-  padding: 0px; 
+  padding: 0px;
 }
 
 
@@ -4268,7 +4266,7 @@ table tbody .border-bottom-info td {
   display: block;
   position: relative;
   background: #F6F7FB;
-  min-height: calc(100vh - 80px); }
+  }
 
 .pcoded .pcoded-content {
   position: relative;
@@ -5723,24 +5721,7 @@ table tbody .border-bottom-info td {
     padding-left: 10px;
     transform: rotate(180deg); }
 
-body[themebg-pattern="pattern1"] {
-  background-image: url("../images/pattern1.jpg"); }
-body[themebg-pattern="pattern2"] {
-  background-image: url("../images/pattern2.jpg"); }
-body[themebg-pattern="pattern3"] {
-  background-image: url("../images/pattern3.jpg"); }
-body[themebg-pattern="pattern4"] {
-  background-image: url("../images/pattern4.jpg"); }
-body[themebg-pattern="pattern5"] {
-  background-image: url("../images/pattern5.jpg"); }
-body[themebg-pattern="pattern6"] {
-  background-image: url("../images/pattern6.jpg"); }
-body[themebg-pattern="pattern7"] {
-  background-image: url("../images/pattern7.jpg"); }
-body[themebg-pattern="pattern8"] {
-  background-image: url("../images/pattern8.jpg"); }
-body[themebg-pattern="pattern9"] {
-  background-image: url("../images/pattern9.jpg"); }
+
 
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li.active > a,
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li:hover > a {

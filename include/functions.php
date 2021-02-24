@@ -97,7 +97,7 @@ function title_to_keywords($title) {
 	}
 }
 function notification($type,$text) {
-return '<div class="alert alert-'.$type.'">'.$text.'</div>';
+return '<div class="alert alert-'.$type.'" style="margin:400px;">'.$text.'</div>';
 }
 
 function verify_recaptcha($secret,$response) {

@@ -32,6 +32,7 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="" >
 			<div class="page-header page-heading">
 				<h1>Add New Category
 				<a href="categories.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -79,6 +80,7 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
 <?php
 break;
 case 'edit';
@@ -310,6 +312,7 @@ foreach ($subs AS $sub) {
 }	
 ?>
 </ul>
+</div>
 </div>
 <?php
 }

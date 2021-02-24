@@ -40,7 +40,10 @@ $draft_videos = $general->count_draft_news('video');
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="asset/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- script start-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script type="text/javascript" src="asset/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="asset/js/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="asset/js/popper.js/popper.min.js"></script>
@@ -73,6 +76,23 @@ $draft_videos = $general->count_draft_news('video');
         });
     </script>
     <!-- script end-->
+    <script src="asset/js/raphael/raphael.min.js"></script>
+    <script src="asset/js/morris.js/morris.js"></script>
+    <!-- Custom js -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/js/script.js"></script>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
+	
+	<script src="assets/js/ajax_ops-modals.min.js"></script>
+	<script src="assets/js/jasny-bootstrap.min.js"></script>
+	<script src="assets/js/bootstrap-tagsinput.min.js"></script>
+	<script src="assets/js/jquery_checkall.js"></script>
+	
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap-tagsinput.css">
 </head>
 
 <body>
@@ -112,75 +132,23 @@ $draft_videos = $general->count_draft_news('video');
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
-                                <a href="#!">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge bg-c-pink"></span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">John Doe</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Joseph William</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Sara Soudein</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
+                           
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                  
                                     <span>John Doe</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    <li>
-                                        <a href="#!">
-                                            <i class="ti-settings"></i> Settings
-                                        </a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="#">
-                                            <i class="ti-user"></i> Profile
+                                        <i class="fas fa-key"></i></i>Change password 
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-email"></i> My Messages
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-lock"></i> Lock Screen
-                                        </a>
-                                    </li>
+                                    
+                                    
+                                   
                                     <li>
                                         <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
@@ -198,7 +166,7 @@ $draft_videos = $general->count_draft_news('video');
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
+                        <div class="pcoded-inner-navbar main-menu mt-4">
                             
                             
                             <ul class="pcoded-item pcoded-left-item">
@@ -210,79 +178,79 @@ $draft_videos = $general->count_draft_news('video');
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="sources.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                    <a href="categories.php">
+                                        <span class="pcoded-micon"><i class="fa fa-folder fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Categories</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 
                                 <li class="">
-                                    <a href="categories.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                    <a href="sources.php">
+                                        <span class="pcoded-micon"><i class="fa fa-rss fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Sources</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="sources.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fa fa-th-large fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Channels</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="channels.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fas fa-newspaper"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">News</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="news.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i <i class="fas fa-video"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Videos</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="videos.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fas fa-smog"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Weather</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="weather.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fas fa-poll"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Polls</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="pages.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fa fa-file fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Pages</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="links.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fa fa-link fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Links</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="advertisements.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fas fa-ad"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Ads</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="sitemaps.php">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="fa fa-sitemap fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Sitemaps</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
