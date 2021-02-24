@@ -32,21 +32,26 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
-<div class="" >
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New Category
 				<a href="categories.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin:25px">
 		  <div class="form-group">
 			<label for="category">Category <span>*</span></label>
 			<input type="text" class="form-control" name="category" id="category" />
 		  </div>
 		  <div class="form-group">
 			<label for="main_id">Main Category <span>*</span></label>
-			<select name="main_id" id="main_id" class="form-control">
+			<select name="main_id" id="main_id" class="form-control" style="height: 35px;">
 				<option value="0">Main Category</option>
 				<?php 
 				$mains = $general->main_categories('category_order ASC');
@@ -81,6 +86,12 @@ $message = notification('danger','Error Happened.');
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'edit';
@@ -112,6 +123,12 @@ $message = notification('danger','Error Happened.');
 }
 $category = $general->category($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Category
 				<a href="categories.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -163,6 +180,12 @@ $category = $general->category($id);
 		  <input type="hidden" name="old_thumbnail" value="<?php echo $category['image']; ?>" />
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 break;
 case 'delete';
@@ -213,13 +236,19 @@ $message = notification('danger','Error Happened.');
 }
 $tcategory = $general->category($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Category
 				<a href="categories.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin:10px">
 		  <?php if (get_category_sources($id) > 0) { ?>
 			<div class="alert alert-warning">The Category <b><?php echo $tcategory['category']; ?></b> Contains <b><?php echo get_category_sources($id); ?></b> Source(s). Do You Want To Move Them to Another Category ?</div>
 		<div class="form-group">
@@ -254,10 +283,24 @@ $tcategory = $general->category($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Just Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
+<div>
 <div class="page-header page-heading">
 	<h1><i class="fa fa-folder"></i> Categories
 	<a href="categories.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
@@ -312,6 +355,11 @@ foreach ($subs AS $sub) {
 }	
 ?>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <?php

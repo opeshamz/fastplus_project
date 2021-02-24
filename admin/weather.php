@@ -12,6 +12,12 @@ $message = $general->set_options($_POST,'Weather');
 }
 $options = $general->get_options('Weather'); 
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 
                 <div class="page-header page-heading">
                     <h1><i class="fa fa-cog"></i> Weather Setting
@@ -20,7 +26,7 @@ $options = $general->get_options('Weather');
 					</h1>
                 </div>
 	<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="">
+		<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<input type="hidden" name="display_weather_widget" value="0" />
 			<input type="checkbox" name="display_weather_widget" id="display_weather_widget" value="1" <?php if ($options['display_weather_widget'] == 1) { echo 'CHECKED'; } ?> /> <span class="checkbox-label">Display Weather Widget</span>
@@ -36,7 +42,12 @@ $options = $general->get_options('Weather');
 		  </div>
 		  <button type="submit" name="save" class="btn btn-primary">Save</button>
 		</form>
-	
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php 
 break;
 case 'add';
@@ -58,14 +69,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 }
-?>
+?><div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New City
 				<a href="weather.php" class="btn btn-default  pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="">
+		<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="city">City <span>*</span></label>
 			<input type="text" class="form-control" name="city" id="city" />
@@ -80,6 +96,13 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+
 <?php
 break;
 case 'edit';
@@ -103,14 +126,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 $city = $general->city($id);
-?>
+?><div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit City
 				<a href="weather.php" class="btn btn-default  pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="">
+		<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="city">City <span>*</span></label>
 			<input type="text" class="form-control" name="city" id="city" value="<?php echo $city['city']; ?>" />
@@ -124,6 +152,13 @@ $city = $general->city($id);
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+  
 <?php
 break;
 case 'delete';
@@ -139,13 +174,19 @@ $message = notification('danger','Error Happened.');
 }
 $city = $general->city($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete City
 				<a href="weather.php" class="btn btn-default  pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin:25px;">
 		  <?php if (empty($done)) { ?>
 		  <div class="alert alert-warning">Are You Sure You Want to Delete <b><?php echo $city['city']; ?></b> ?</div>
 		  <?php } ?>
@@ -155,10 +196,23 @@ $city = $general->city($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-sun-o"></i> Weather
 	<a href="weather.php?case=setting" class="btn btn-default btn-sm pull-right"><span class="fa fa-cog"></span></a>
@@ -194,6 +248,13 @@ foreach ($weather AS $city) {
 ?>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }
 }

@@ -28,13 +28,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add Page
 				<a href="pages.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="title">Title <span>*</span></label>
 			<input type="text" class="form-control" name="title" id="title" />
@@ -60,6 +66,13 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'edit';
@@ -86,13 +99,19 @@ $message = notification('danger','Error Happened.');
 }
 $page = $general->page($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Page
 				<a href="pages.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="title">Title <span>*</span></label>
 			<input type="text" class="form-control" name="title" id="title" value="<?php echo $page['title']; ?>" />
@@ -118,6 +137,13 @@ $page = $general->page($id);
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'delete';
@@ -133,13 +159,19 @@ $message = notification('danger','Error Happened.');
 }
 $pages = $general->pages($id);
 ?>
-			<div class="page-header page-heading">
+		<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
+		<div class="page-header page-heading">
 				<h1>Delete Page
 				<a href="pages.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin: 25px;">
 		  <?php if (empty($done)) { ?>
 			<div class="alert alert-warning">Are you sure to Delete the Page : <b><?php echo htmlspecialchars_decode($pages['title'],ENT_QUOTES); ?></b> ?</div>
 		  <?php } ?>
@@ -149,10 +181,23 @@ $pages = $general->pages($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+		</div>
+		
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-file"></i> Pages
 	<a href="pages.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
@@ -185,6 +230,13 @@ foreach ($pages AS $page) {
 ?>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }
 } 

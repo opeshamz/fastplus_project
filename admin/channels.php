@@ -22,6 +22,7 @@ $row = $query->fetch_assoc();
 $category_id = $row['category_id'];
 $sub_category_id = $row['sub_category_id'];
 ?>
+
 <div class="page-header page-heading">
 	<h1><i class="fa fa-youtube"></i> All Videos In <?php echo $row['title']; ?> Channel</h1>
 </div>
@@ -55,6 +56,12 @@ $sub_category_id = $row['sub_category_id'];
 	 '&key=' . $apiKey;
 	$json = json_decode(file_get_contents($url), true);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="row">
 <div class="col-xs-12">
 <div class="alert alert-warning">There are (<b><?php echo $json['pageInfo']['totalResults']; ?></b>) Result(s) for <b><?php echo $row['title']; ?></b> Channel.</div>	
@@ -82,9 +89,21 @@ foreach($json['items'] as $item) {
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php	
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 </div>
 <div class="col-xs-12 pages-line">
 <div class="row">
@@ -104,6 +123,13 @@ echo '<a class="btn btn-default"  href="channels.php?case=channel_videos&site=yo
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php	
 break;
 
@@ -120,6 +146,12 @@ $row = $query->fetch_assoc();
 $category_id = $row['category_id'];
 $sub_category_id = $row['sub_category_id'];
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-vimeo"></i> All Videos In <?php echo $row['title']; ?> Channel</h1>
 </div>
@@ -153,6 +185,13 @@ $videos = simplexml_load_string(curl_get($api_endpoint . '/videos.xml?page='.$pa
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php		
 }	
 ?>
@@ -198,6 +237,12 @@ $row = $query->fetch_assoc();
 $category_id = $row['category_id'];
 $sub_category_id = $row['sub_category_id'];
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-youtube-play"></i> All Videos In <?php echo $row['title']; ?> Channel</h1>
 </div>
@@ -228,6 +273,13 @@ foreach(array_reverse($videos['list']) as $item) {
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php		
 }
 ?>
@@ -292,13 +344,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New Video Channel
 				<a href="channels.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin:25px;">
 		
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Setting</a></li>
@@ -393,6 +451,12 @@ $message = notification('danger','Error Happened.');
 		</div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 break;
 case 'edit';
@@ -427,13 +491,19 @@ $message = notification('danger','Error Happened.');
 }
 $source = $general->source($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Channel
 				<a href="channels.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 						<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" >
 		
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Setting</a></li>
@@ -527,6 +597,13 @@ $source = $general->source($id);
 		</div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'delete';
@@ -552,6 +629,12 @@ $message = notification('danger','Error Happened.');
 }
 $source = $general->source($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Channel
 				<a href="channels.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -571,15 +654,29 @@ $source = $general->source($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-th-large"></i> Video Channels
 	<a href="channels.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
 	</h1>
 </div>
+<div class="">
 <?php
 $page = 1;
 $size = 20;
@@ -598,6 +695,10 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM sources WHERE source_type='video' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+</div>
+<div class="table-responsive" >
+<div class="card-block table-border-style">
+
 <table width="100%" cellpadding="5" cellspacing="0" class="table">
     <thead>
         <tr>
@@ -648,6 +749,15 @@ while ($row = $q->fetch_assoc()) {
 ?>
 	</tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 echo $pagination->create_links();
 }

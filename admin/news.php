@@ -45,6 +45,12 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add Article
 				<a href="news.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -104,6 +110,13 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  </div>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'edit';
@@ -141,7 +154,12 @@ $message = notification('danger','Error Happened.');
 }
 }
 $news = $general->news($id);
-?>
+?><div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Article
 				<a href="news.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -208,6 +226,12 @@ $news = $general->news($id);
 		  
 		  </div>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
 <?php
 break;
 case 'delete';
@@ -240,6 +264,12 @@ $message = notification('danger','Error Happened.');
 }
 $news = $general->news($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Article
 				<a href="news.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -257,13 +287,26 @@ $news = $general->news($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Permanent Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'search';
 $q = make_safe(xss_clean($_GET['q']));
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
-	<h1 class="row"><div class="col-md-6"><i class="fa fa-search"></i> Search For <?php echo $q; ?> In News</div>
+	<h1 class="row"><div class=""><i class="fa fa-search"></i> Search For <?php echo $q; ?> In News</div>
 	<div class="col-md-6">
 	<div class="pull-right search-form">
 	<form method="GET" action="news.php">
@@ -280,6 +323,9 @@ $q = make_safe(xss_clean($_GET['q']));
 	</div>
 	</h1>
 </div>
+
+
+
 <?php
 if (isset($message)) {echo $message;}
 $page = 1;
@@ -299,7 +345,9 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_type='rss' AND title LIKE '%$q%' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
-<table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
+<div class="table-responsive" >
+<div class="card-block table-border-style">
+<table width=""  class="table table-striped">
     <thead>
         <tr>
 			<th width="15"><input type="checkbox" class="parentCheckBox" /></th>
@@ -336,11 +384,20 @@ while ($row = $q->fetch_assoc()) {
 ?>
 	</tbody>
 </table>
+</div>
+</div>
 <div class="news-actions">
 <div class="row">
 <div class="col-xs-12"><?php echo $pagination->create_links(); ?></div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }		
 break;
@@ -389,6 +446,12 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_type='rss' AND category_id='$id' AND sub_category_id='$sub_id' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <form role="form" method="POST" action="">
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
@@ -436,6 +499,11 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 }	
 break;
@@ -479,6 +547,12 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_type='rss' AND source_id='$id' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <form role="form" method="POST" action="">
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
@@ -526,6 +600,14 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }	
 break;
@@ -564,6 +646,12 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	}
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-trash"></i> Deleted News</div>
 	<div class="col-md-6">
@@ -581,6 +669,13 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	</div>
 	</h1>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 if (isset($message)) {echo $message;}
 $page = 1;
@@ -600,6 +695,12 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='0' AND deleted='1' AND source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <form role="form" method="POST" action="">
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
@@ -648,6 +749,13 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }		
 break;
@@ -686,6 +794,12 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	}
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-edit"></i> Need Review News</div>
 	<div class="col-md-6">
@@ -797,6 +911,13 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	</div>
 	</h1>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 if (isset($message)) {echo $message;}
 $page = 1;
@@ -816,6 +937,12 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <form role="form" method="POST" action="">
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
@@ -861,8 +988,15 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 } 
 } 
-include('footer.php');
+//include('footer.php');
 ?>

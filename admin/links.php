@@ -29,13 +29,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New Link
 				<a href="links.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="">
+		<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="title">Link Title <span>*</span></label>
 			<input type="text" class="form-control" name="title" id="title" />
@@ -68,6 +74,13 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'edit';
@@ -95,13 +108,19 @@ $message = notification('danger','Error Happened.');
 }
 $link = $general->link($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Link
 				<a href="links.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-				<form role="form" method="POST" action="">
+				<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="title">Link Title <span>*</span></label>
 			<input type="text" class="form-control" name="title" id="title" value="<?php echo $link['title']; ?>" />
@@ -134,6 +153,13 @@ $link = $general->link($id);
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'delete';
@@ -149,13 +175,19 @@ $message = notification('danger','Error Happened.');
 }
 $link = $general->link($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Link
 				<a href="links.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin: 25px;">
 		  <?php if (empty($done)) { ?>
 			<div class="alert alert-warning">Are you Sure that you want to delete the Link : <b><?php echo $link['title']; ?></b> ?</div>
 		  <?php } ?>
@@ -165,10 +197,23 @@ $link = $general->link($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-link"></i> Links
 	<a href="links.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
@@ -204,6 +249,12 @@ foreach ($links AS $link) {
 }	
 ?>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <?php
 }

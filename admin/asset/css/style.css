@@ -26,6 +26,17 @@ File: style.css
 /**  =====================
       Custom css start
 ==========================  **/
+.sidenav:hover{
+  background-color:#5cb85c !important;
+  color:#000000;
+  font-weight: bold;
+  border-radius:0px 50px 50px 0px;
+
+}
+
+select{
+  height: 35px !important;
+}
 
 body {
 
@@ -4289,7 +4300,7 @@ table tbody .border-bottom-info td {
     display: block;
     list-style: outside none none;
     margin: 0;
-    padding: 0;
+    padding-bottom: 5px;
     position: relative; }
     .pcoded .pcoded-navbar .pcoded-item > li > a {
       display: block;
@@ -4302,7 +4313,7 @@ table tbody .border-bottom-info td {
         opacity: 0.5;
         cursor: not-allowed !important; }
     .pcoded .pcoded-navbar .pcoded-item > li.active > a {
-      font-weight: 600; }
+      font-weight: bold; }
   .pcoded .pcoded-navbar .pcoded-item .pcoded-hasmenu .pcoded-submenu {
     list-style: outside none none;
     margin: 0;
@@ -5459,7 +5470,7 @@ table tbody .border-bottom-info td {
 .pcoded[theme-layout="vertical"][vertical-nav-type="fullpage"] .pcoded-navbar .pcoded-item > li a .pcoded-badge {
   display: none; }
 .pcoded[theme-layout="vertical"][vertical-nav-type="fullpage"] .pcoded-navbar .pcoded-item > li:hover > a {
-  background: transparent !important; }
+  background:; }
   .pcoded[theme-layout="vertical"][vertical-nav-type="fullpage"] .pcoded-navbar .pcoded-item > li:hover > a:before {
     display: none; }
 .pcoded[theme-layout="vertical"][vertical-nav-type="fullpage"] .pcoded-navbar .pcoded-item > li.active > a > .pcoded-mcaret {
@@ -5726,13 +5737,16 @@ table tbody .border-bottom-info td {
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li.active > a,
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li:hover > a {
   color: #FE8A7D !important; }
+
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li .pcoded-submenu li.active > a {
   font-weight: 600; }
+  
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li.pcoded-hasmenu:hover > a {
   color: #FFF !important; }
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover > a {
   color: #fff !important;
-  background: #FE8A7D; }
+  background: #FE8A7D;}
+  
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .pcoded-item li:hover > a:before {
   border-left-color: transparent !important; }
 .pcoded .pcoded-navbar[active-item-theme="theme1"] .searchbar-toggle {
@@ -5742,8 +5756,9 @@ table tbody .border-bottom-info td {
   color: #FC6180 !important; }
 .pcoded .pcoded-navbar[active-item-theme="theme2"] .pcoded-item li .pcoded-submenu li.active > a {
   font-weight: 600; }
+  /**
 .pcoded .pcoded-navbar[active-item-theme="theme2"] .pcoded-item li.pcoded-hasmenu:hover > a {
-  color: #FFF !important; }
+  color: #FFF !important; }**/
 .pcoded .pcoded-navbar[active-item-theme="theme2"] .pcoded-item li:hover > a {
   color: #fff !important;
   background: #FC6180; }
@@ -5772,9 +5787,11 @@ table tbody .border-bottom-info td {
   font-weight: 600; }
 .pcoded .pcoded-navbar[active-item-theme="theme4"] .pcoded-item li.pcoded-hasmenu:hover > a {
   color: #FFF !important; }
+  
 .pcoded .pcoded-navbar[active-item-theme="theme4"] .pcoded-item li:hover > a {
   color: #fff !important;
-  background: #4680ff; }
+  }
+
 .pcoded .pcoded-navbar[active-item-theme="theme4"] .pcoded-item li:hover > a:before {
   border-left-color: transparent !important; }
 .pcoded .pcoded-navbar[active-item-theme="theme4"] .searchbar-toggle {
@@ -5911,6 +5928,7 @@ table tbody .border-bottom-info td {
         color: #fff; }
     .pcoded .pcoded-navbar[navbar-theme="theme1"] .main-menu .main-menu-content .more-details a {
       color: #fff; }
+      /**====== Custom css end 
   .pcoded .pcoded-navbar[navbar-theme="theme1"] .pcoded-item > li > a {
     color: #fff; }
   .pcoded .pcoded-navbar[navbar-theme="theme1"] .pcoded-item > li.active > a {
@@ -5984,10 +6002,11 @@ table tbody .border-bottom-info td {
 .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item li.pcoded-hasmenu:hover > a {
   color: #000 !important; }
 .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item li:hover > a {
-  color: #000 !important;
-  background: #fff; }
+  color: red !important;
+  background: green !important; }
 .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item li:hover > a:before {
   border-left-color: transparent !important; }
+  ======**/
 .pcoded .pcoded-navbar[navbar-theme="themelight1"] {
   background: #fff; }
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .main-menu {
@@ -6009,9 +6028,11 @@ table tbody .border-bottom-info td {
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li.pcoded-hasmenu.pcoded-trigger .pcoded-submenu li.pcoded-hasmenu.pcoded-trigger > a:after,
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li.pcoded-hasmenu.pcoded-trigger > a:after {
     color: #000; }
+    /**====== Custom css end 
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li.active:hover > a, .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li:hover > a {
     background: #fff;
     color: #000; }
+    ======**/
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item .pcoded-hasmenu .pcoded-submenu li:hover > a {
     background-color: #fff;
     color: #000; }
@@ -6038,9 +6059,7 @@ table tbody .border-bottom-info td {
     background: #fff; }
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li > a {
     color: #000 !important; }
-  .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li.active > a {
-    background: #fff !important;
-    color: #FFF; }
+  
     .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li.active > a:before {
       border-left-color: #fff; }
   .pcoded .pcoded-navbar[navbar-theme="themelight1"] .pcoded-item > li > a {

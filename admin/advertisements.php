@@ -40,6 +40,12 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add Advertisement
 				<a href="advertisements.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -95,6 +101,13 @@ $message = notification('danger','Error Happened.');
 		</div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'edit';
@@ -134,6 +147,12 @@ $message = notification('danger','Error Happened.');
 }
 $ad = $general->ad($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Advertisement
 				<a href="advertisements.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -193,6 +212,13 @@ $ad = $general->ad($id);
 		<input type="hidden" name="old_image" value="<?php echo $ad['image']; ?>" />
 		<button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'delete';
@@ -208,6 +234,12 @@ $message = notification('danger','Error Happened.');
 }
 $ad = $general->ad($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Advertisement
 				<a href="advertisements.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -224,10 +256,23 @@ $ad = $general->ad($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-picture-o"></i> Advertisements
 	<a href="advertisements.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
@@ -268,6 +313,13 @@ foreach ($ads AS $ad) {
 ?>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }
 } 

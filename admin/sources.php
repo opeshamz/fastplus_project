@@ -64,7 +64,7 @@ $message = notification('danger','Error Happened.');
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Setting</a></li>
@@ -423,12 +423,17 @@ $source = $general->source($id);
 break;
 default;
 ?>
-<!--
-<div class="page-header page-heading">
-	<h1><i class="fa fa-rss"></i> RSS Sources
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
+<div class="page-header page-heading" style="margin-top: -30px;">
+	
 	<a href="sources.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
 	</h1>
-</div>-->
+</div>
 <?php
 $page = 1;
 $size = 20;
@@ -473,12 +478,7 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM sources WHERE source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
-<div class="pcoded-content">
-<div class="pcoded-inner-content">
-<div class="main-body">
-<div class="page-wrapper">
-<div class="page-body">
-<div class="card">
+
 <div class="table-responsive" >
 <div class="card-block table-border-style">
 

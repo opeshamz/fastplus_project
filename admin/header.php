@@ -74,12 +74,26 @@ $draft_videos = $general->count_draft_news('video');
                 nav.removeClass('active');
             }
         });
+
+        var btnContainer = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("sidenav");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
     </script>
     <!-- script end-->
     <script src="asset/js/raphael/raphael.min.js"></script>
     <script src="asset/js/morris.js/morris.js"></script>
     <!-- Custom js -->
-    <link rel="stylesheet" href="assets/css/style.css">
+   
     <script type="text/javascript" src="assets/js/script.js"></script>
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
@@ -169,16 +183,16 @@ $draft_videos = $general->count_draft_news('video');
                         <div class="pcoded-inner-navbar main-menu mt-4">
                             
                             
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="index.php">
+                            <ul class="pcoded-item pcoded-left-item" id="myDIV">
+                                <li>
+                                    <a href="index.php" class="active sidenav">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="categories.php">
+                                    <a href="categories.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-folder fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Categories</span>
                                         <span class="pcoded-mcaret"></span>
@@ -186,70 +200,70 @@ $draft_videos = $general->count_draft_news('video');
                                 </li>
                                 
                                 <li class="">
-                                    <a href="sources.php">
+                                    <a href="sources.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-rss fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Sources</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="sources.php">
+                                    <a href="channels.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-th-large fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Channels</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="channels.php">
+                                    <a href="news.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fas fa-newspaper"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">News</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="news.php">
+                                    <a href="videos.php" class="sidenav">
                                         <span class="pcoded-micon"><i <i class="fas fa-video"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Videos</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="videos.php">
+                                    <a href="weather.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fas fa-smog"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Weather</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="weather.php">
+                                    <a href="polls.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fas fa-poll"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Polls</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="pages.php">
+                                    <a href="pages.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-file fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Pages</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="links.php">
+                                    <a href="links.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-link fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Links</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="advertisements.php">
+                                    <a href="advertisements.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fas fa-ad"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Ads</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="sitemaps.php">
+                                    <a href="sitemaps.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-sitemap fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Sitemaps</span>
                                         <span class="pcoded-mcaret"></span>

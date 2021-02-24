@@ -61,6 +61,12 @@ $message = notification('warning','Insert the Search Word Please.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-search"></i> Search Youtube</div>
 	<div class="col-md-6">
@@ -69,9 +75,9 @@ $message = notification('warning','Insert the Search Word Please.');
 	</h1>
 </div>
 <div class="row">
-<div class="col-md-3">
+<div class="col-md-6" style="margin: 25px;">
 <div class="big-search-form">
-	<form method="GET" action="videos.php">
+	<form method="GET" action="videos.php" style="margin: 25px;">
 		  <input type="hidden" name="case" value="search_youtube" />
 		  <div class="form-group">
 		  <label>Search Word</label>
@@ -229,6 +235,12 @@ $message = notification('warning','Insert the Search Word Please.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-search"></i> Search DailyMotion</div>
 	<div class="col-md-6">
@@ -236,10 +248,10 @@ $message = notification('warning','Insert the Search Word Please.');
 	</div>
 	</h1>
 </div>
-<div class="row">
-<div class="col-md-3">
-<div class="big-search-form">
-	<form method="GET" action="videos.php">
+<div class="row"  >
+<div class="col-md-6" style="margin: 25px;">
+<div class="big-search-form" >
+	<form method="GET" action="videos.php" style="margin: 25px;">
 		  <input type="hidden" name="case" value="search_dailymotion" />
 		  <div class="form-group">
 		  <label>Search Word</label>
@@ -273,7 +285,7 @@ if ($categories == 0) {
 echo notification('warning','Please add at least one category to import the videos in.');	
 } else {
 ?>
-<div class="form-group">
+<div class="form-group" style="margin:25px;">
 		<label>Category</label>
 		<select name="category" id="category" class="form-control">
 		<?php 
@@ -351,6 +363,13 @@ echo $paginations->create_links();
 <?php } ?>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;	
 case 'edit';
@@ -388,14 +407,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 $news = $general->news($id);
-?>
+?><div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Video
 				<a href="videos.php" class="btn btn-default pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		<div class="row">
 		<div class="col-md-9">
 		  <div class="form-group">
@@ -452,6 +476,13 @@ $news = $general->news($id);
 		  </div>
 		  </div>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+  
 <?php
 break;
 case 'delete';
@@ -490,7 +521,7 @@ $news = $general->news($id);
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin: 25px;">
 		  <?php if (empty($done)) { ?>
 			<div class="alert alert-warning">You Can Either <b>Unpublish</b> or <b>Delete</b> the Video : <b><?php echo htmlspecialchars_decode($news['title'],ENT_QUOTES); ?></b>. If you Choose to Delete you Can't Undo this Action Later.</div>
 		  <?php } ?>
@@ -520,11 +551,17 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	}
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-search"></i> Search For <?php echo $q; ?> In Published Videos</div>
 	<div class="col-md-6">
 	<div class="pull-right search-form">
-	<form method="GET" action="videos.php">
+	<form method="GET" action="videos.php" style="margin: 25px;">
 		<div class="input-group">
 		  <input type="hidden" name="case" value="search" />
 		  <input type="text" name="q" class="form-control" placeholder="Search" value="<?php echo $q; ?>" />
@@ -609,6 +646,13 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }		
 break;
@@ -630,6 +674,12 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 }
 $source = $general->source($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-th-large"></i> <?php if ($id == 0) { echo 'Single Videos'; } else { echo 'Imported Videos From '.$source['title']; } ?></h1>
 </div>
@@ -652,7 +702,7 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_id='$id' AND source_type='video' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
-<form role="form" method="POST" action="">
+<form role="form" method="POST" action="" style="margin: 25px;">
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
         <tr>
@@ -705,6 +755,13 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }	
 break;
@@ -743,6 +800,12 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-reorder"></i> Deleted Videos</h1>
 </div>
@@ -819,6 +882,13 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }	
 break;
@@ -851,6 +921,12 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-edit"></i> Need Review Videos</h1>
 </div>
@@ -927,6 +1003,12 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 }	
 break;
@@ -945,11 +1027,17 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	}
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-youtube-play"></i> Published Videos</div>
 	<div class="col-md-6">
 	<div class="pull-right search-form">
-	<form method="GET" action="videos.php">
+	<form method="GET" action="videos.php" style="margin: 25px;">
 		<div class="input-group">
 		  <input type="hidden" name="case" value="search" />
 		  <input type="text" name="q" class="form-control" placeholder="Search">
@@ -1034,6 +1122,13 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 } 
 } 

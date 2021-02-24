@@ -13,6 +13,12 @@ $message = $general->set_options($_POST,'Polls');
 }
 $options = $general->get_options('Polls'); 
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 
                 <div class="page-header page-heading">
                     <h1><i class="fa fa-cog"></i> Poll Setting
@@ -26,7 +32,7 @@ $options = $general->get_options('Polls');
 				} else {
 				?>
 	<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="">
+		<form role="form" method="POST" action="" style="margin: 25px;">
 		  <div class="form-group">
 			<input type="hidden" name="display_poll_widget" value="0" />
 			<input type="checkbox" name="display_poll_widget" id="display_poll_widget" value="1" <?php if (isset($options['display_poll_widget']) AND $options['display_poll_widget'] == 1) {echo 'CHECKED';} ?> /> <span class="checkbox-label">Display Poll Widget ?</span>
@@ -48,6 +54,13 @@ $options = $general->get_options('Polls');
 		  </div>
 		  <button type="submit" name="save" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 		<?php } ?>
 	
 <?php 
@@ -82,13 +95,19 @@ $message = notification('danger','Error Happened.');
 }
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Add New Poll
 				<a href="polls.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="question">Poll Question <span>*</span></label>
 			<input type="text" class="form-control" name="question" id="question" />
@@ -113,6 +132,12 @@ $message = notification('danger','Error Happened.');
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 break;
 case 'edit';
@@ -160,13 +185,19 @@ $message = notification('danger','Error Happened.');
 }
 $question = $general->question($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Edit Poll
 				<a href="polls.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="question">Poll Question <span>*</span></label>
 			<input type="text" class="form-control" name="question" id="question" value="<?php echo $question['question']; ?>" />
@@ -205,6 +236,13 @@ $question = $general->question($id);
 		  <input type="hidden" name="old_thumbnail" value="<?php echo $question['image']; ?>" />
 		  <button type="submit" name="submit" class="btn btn-primary">Save</button>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 break;
 case 'result';
@@ -212,6 +250,12 @@ $id = abs(intval(make_safe(xss_clean($_GET['id']))));
 $question = $general->question($id);
 $answers = $general->answers($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1><i class="fa fa-pie-chart"></i> <?php echo $question['question']; ?>
 				<a href="polls.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
@@ -246,7 +290,7 @@ $answers = $general->answers($id);
 			?>
 			</table>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 			<script>
 			$(function() {
 				Morris.Donut({
@@ -275,6 +319,13 @@ $answers = $general->answers($id);
 			<div id="pollresult"></div>		
 			</div>
 			</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 			<?php } ?>
 			
 <?php
@@ -294,13 +345,19 @@ $message = notification('danger','Error Happened.');
 }
 $poll = $general->question($id);
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 			<div class="page-header page-heading">
 				<h1>Delete Poll
 				<a href="polls.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin: 25px;">
 		  <?php if (empty($done)) { ?>
 			<div class="alert alert-warning">Are You Sure that you want to Delete the Poll : <?php echo $poll['question']; ?> With all Related Answers and Votes ?</div>
 		  <?php } ?>
@@ -310,10 +367,22 @@ $poll = $general->question($id);
 		  <button type="submit" name="delete" class="btn btn-danger">Delete</button>
 		  <?php } ?>
 		</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 break;
 default;
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1><i class="fa fa-pie-chart"></i> Polls
 	<a href="polls.php?case=setting" class="btn btn-default btn-sm pull-right"><span class="fa fa-cog"></span></a>
@@ -353,6 +422,13 @@ foreach ($polls AS $question) {
 }	
 ?>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 }
 }

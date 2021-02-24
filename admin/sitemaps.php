@@ -4,6 +4,12 @@ $all = $mysqli->query("SELECT published,deleted FROM news WHERE published='1' AN
 $news = $all->num_rows;
 if ($news > 0) {
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 <h1><i class="fa fa-sitemap"></i> Sitemaps</h1>
 </div>
@@ -44,6 +50,13 @@ $sitemap = str_replace(':/','://',str_replace('//','/',($sitemap_link)));
 ?>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 include('footer.php');
 ?>
