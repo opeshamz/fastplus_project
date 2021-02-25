@@ -40,8 +40,8 @@ $draft_videos = $general->count_draft_news('video');
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="asset/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    
     <!-- script start-->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script type="text/javascript" src="asset/js/jquery/jquery.min.js"></script>
