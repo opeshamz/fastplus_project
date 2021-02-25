@@ -75,22 +75,26 @@ $draft_videos = $general->count_draft_news('video');
     <script src="asset/js/morris.js/morris.js"></script>
     <!-- Custom js -->
    
-    <script type="text/javascript" src="assets/js/script.js"></script>
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
-	
-	<script src="assets/js/ajax_ops-modals.min.js"></script>
-	<script src="assets/js/jasny-bootstrap.min.js"></script>
-	<script src="assets/js/bootstrap-tagsinput.min.js"></script>
-	<script src="assets/js/jquery_checkall.js"></script>
-	
-
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-tagsinput.css">
+  
 </head>
 
 <body>
+<div class="theme-loader">
+    <div class="ball-scale">
+        <div class='contain'>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+        </div>
+    </div>
+</div>
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
@@ -164,94 +168,53 @@ $draft_videos = $general->count_draft_news('video');
                         <div class="pcoded-inner-navbar main-menu mt-4">
                             
                             
-                            <ul class="pcoded-item pcoded-left-item" id="myDIV">
-                                <li>
-                                    <a href="index.php" class="active sidenav">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                        <ul class="pcoded-item pcoded-left-item">
+                        <li class="active">
+                                    <a href="index.php" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-list"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="categories.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-folder fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Categories</span>
+                                <li class="active">
+                                    <a href="sitelist.php" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-list"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Website list</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                
-                                <li class="">
-                                    <a href="sources.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-rss fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Sources</span>
+                                <li class="active">
+                                    <a href="create.php" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-plus-square"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Create website</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="channels.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-th-large fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Channels</span>
+                                <li class="active">
+                                    <a href="index.html" class="sidenav">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">DFY</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="news.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fas fa-newspaper"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">News</span>
+                                <li class="active">
+                                    <a href="index.html" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-video"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Traning</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="videos.php" class="sidenav">
-                                        <span class="pcoded-micon"><i <i class="fas fa-video"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Videos</span>
+                                <li class="active">
+                                    <a href="index.html" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-phone-square"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Support</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="weather.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fas fa-smog"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Weather</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="polls.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fas fa-poll"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Polls</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="pages.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-file fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Pages</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="links.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-link fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Links</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="advertisements.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fas fa-ad"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Ads</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="sitemaps.php" class="sidenav">
-                                        <span class="pcoded-micon"><i class="fa fa-sitemap fa-fw"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Sitemaps</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                
+
                             </ul>
+
+
                         </div>
                     </nav>
 

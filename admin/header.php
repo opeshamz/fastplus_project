@@ -26,7 +26,7 @@ $draft_videos = $general->count_draft_news('video');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Script LV | Dashboard</title>
+    <title>Viralgroove</title>
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Google font-->
@@ -91,6 +91,22 @@ $draft_videos = $general->count_draft_news('video');
 </head>
 
 <body>
+<div class="theme-loader">
+    <div class="ball-scale">
+        <div class='contain'>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+            <div class="ring"><div class="frame"></div></div>
+        </div>
+    </div>
+</div>
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
