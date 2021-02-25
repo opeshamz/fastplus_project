@@ -1,5 +1,7 @@
+
 <?php
 include('header.php'); 
+
 if (!empty($_GET['case'])) {
 $case = make_safe($_GET['case']);	
 } else {
@@ -57,7 +59,7 @@ $message = notification('danger','Error Happened.');
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-<form role="form" method="POST" action="" enctype="multipart/form-data">
+<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		<div class="row">
 		<div class="col-md-9">
 		  <div class="form-group">
@@ -70,7 +72,7 @@ $message = notification('danger','Error Happened.');
 			<textarea class="wysiwyg form-control" name="details" id="details" rows="15"></textarea>
 		  </div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-9">
 		  <div class="form-group">
 			<label for="category_id">Category <span>*</span></label>
 			<select class="form-control" name="category_id" id="category_id">
@@ -166,7 +168,7 @@ $news = $general->news($id);
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		<div class="row">
 		<div class="col-md-9">
 		  <div class="form-group">
@@ -179,7 +181,7 @@ $news = $general->news($id);
 			<textarea class="wysiwyg form-control" name="details" id="details" rows="15" ><?php echo htmlspecialchars_decode($news['details'],ENT_QUOTES); ?></textarea>
 		  </div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-9">
 		  <div class="form-group">
 			<input type="checkbox" name="published" id="published" value="1" <?php if ($news['published'] == 1) {echo 'CHECKED';} ?> /> <span class="checkbox-label">Publish Article ?</span>
 		  </div>
@@ -283,8 +285,10 @@ $news = $general->news($id);
 		  <?php if ($done) { ?>
 		  <a href="news.php" class="btn btn-default">Back To News</a>
 		  <?php } else { ?>
+		  <div style="margin: 10px;">
 		  <button type="submit" name="unpublish" class="btn btn-warning">Unpublish</button>
 		  <button type="submit" name="delete" class="btn btn-danger">Permanent Delete</button>
+		  </div>
 		  <?php } ?>
 		</form>
 </div>
@@ -669,13 +673,8 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	</div>
 	</h1>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
+<div style="margin: 25px;">
 <?php
 if (isset($message)) {echo $message;}
 $page = 1;
@@ -695,6 +694,13 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='0' AND deleted='1' AND source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="pcoded-content">
 <div class="pcoded-inner-content">
 <div class="main-body">
@@ -874,6 +880,12 @@ while ($row = $q->fetch_assoc()) {
 </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 }		
 break;
@@ -893,6 +905,12 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	}
 }
 ?>
+<div class="pcoded-content">
+<div class="pcoded-inner-content">
+<div class="main-body">
+<div class="page-wrapper">
+<div class="page-body">
+<div class="card">
 <div class="page-header page-heading">
 	<h1 class="row"><div class="col-md-6"><i class="fa fa-newspaper-o"></i> Published News</div>
 	<div class="col-md-6">
@@ -911,12 +929,8 @@ if (isset($_POST['delete']) AND isset($_POST['id'])) {
 	</div>
 	</h1>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
 
 <?php
 if (isset($message)) {echo $message;}
@@ -937,13 +951,10 @@ $pagination->setTotalRecords($total_records);
 $get = "SELECT * FROM news WHERE published='1' AND deleted='0' AND source_type='rss' ORDER BY id DESC ".$pagination->getLimitSql();
 $q = $mysqli->query($get);
 ?>
-<div class="pcoded-content">
-<div class="pcoded-inner-content">
-<div class="main-body">
-<div class="page-wrapper">
-<div class="page-body">
-<div class="card">
+
+
 <form role="form" method="POST" action="">
+
 <table width="100%" cellpadding="5" cellspacing="0" class="table table-striped">
     <thead>
         <tr>
@@ -981,7 +992,7 @@ while ($row = $q->fetch_assoc()) {
 ?>
 	</tbody>
 </table>
-<div class="news-actions">
+<div class="news-actions" style="margin: 10px;">
 <div class="row">
 <div class="col-sm-2 col-md-3"><button type="submit" name="delete" class="btn btn-danger"><span class="fa fa-trash"></span> Delete</button></div>
 <div class="col-sm-10 col-md-9"><?php echo $pagination->create_links(); ?></div>

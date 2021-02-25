@@ -429,7 +429,7 @@ default;
 <div class="page-wrapper">
 <div class="page-body">
 <div class="card">
-<div class="page-header page-heading" style="margin-top: -30px;">
+<div class="page-header page-heading">
 	
 	<a href="sources.php?case=add" class="btn btn-success btn-sm pull-right"><span class="fa fa-plus"></span></a>
 	</h1>

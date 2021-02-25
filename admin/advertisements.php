@@ -159,7 +159,7 @@ $ad = $general->ad($id);
 				</h1>
 			</div>
 			<?php if (isset($message)) {echo $message;} ?>
-		<form role="form" method="POST" action="" enctype="multipart/form-data">
+		<form role="form" method="POST" action="" enctype="multipart/form-data" style="margin: 25px;">
 		  <div class="form-group">
 			<label for="title">Title <span>*</span></label>
 			<input type="text" class="form-control" name="title" id="title" value="<?php echo $ad['title']; ?>" />
@@ -245,8 +245,9 @@ $ad = $general->ad($id);
 				<a href="advertisements.php" class="btn btn-default btn-sm pull-right"><span class="fa fa-arrow-right"></span></a>
 				</h1>
 			</div>
+			
 			<?php if (isset($message)) {echo $message;} ?>
-		  <form role="form" method="POST" action="">
+		  <form role="form" method="POST" action="" style="margin: 25px;">
 		  <?php if (empty($done)) { ?>
 			<div class="alert alert-warning">Are you sure to Delete the Advertisement : <b><?php echo htmlspecialchars_decode($ad['title'],ENT_QUOTES); ?></b> ?</div>
 		  <?php } ?>

@@ -124,6 +124,13 @@
 
                           
                             <ul class="pcoded-item pcoded-left-item">
+                            <li class="active">
+                                    <a href="sitelist.php">
+                                        <span class="pcoded-micon"><i class="fas fa-list"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                                 <li class="active">
                                     <a href="sitelist.php">
                                         <span class="pcoded-micon"><i class="fas fa-list"></i><b>D</b></span>
