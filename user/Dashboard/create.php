@@ -55,48 +55,140 @@ include("header.php");
                                             <span class="input-group-text" id="basic-addon2">.viragrove.com</span>
                                         </div>
                                     </div>
-                                    <div class="row p-5">
-                                    <div class="colonm">
-                                    <div class="col-md">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                        <label class="">
-                                            template 1
-                                        </label>
-                                    </div>
                                     <div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            Preview
-                                    </button>
-                                    </div>
-                                    </div>
-                                    <div class="colonm">
-                                    <div class="col-md">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                        <label class="">
-                                            template 1
-                                        </label>
-                                    </div>
-                                    <div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                            Preview
-                                    </button>
-                                    </div>
-                                    </div>
-                                    <div class="colonm">
-                                    <div class="col-md">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                        <label class="">
-                                            template 1
-                                        </label>
-                                    </div>
-                                    <div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                             Preview
-                                    </button>
-                                    </div>
-                                    </div>
+                                        <h6>select template</h6>
+                                        <div class="row p-5" style="margin-top: -30px;">
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModall">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalll">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
+
+                                <!-- template 1️-->
+
+                                <div class="container mt-3">
+
+                                    <!-- The Modal -->
+                                    <div class="modal fade modal-dialog-scrollable" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Template 1</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                   <img src="">
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- template 2 -->
+
+                                <div class="container mt-3">
+
+                                    <!-- The Modal -->
+                                    <div class="modal fade modal-dialog-scrollable" id="myModall">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Template 2</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                   <img src="">
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade modal-dialog-scrollable" id="myModalll">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Template 3</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                   <img src="">
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- template 3 -->
                             </div>
                         </div>
                     </div>

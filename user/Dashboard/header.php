@@ -41,6 +41,7 @@ $draft_videos = $general->count_draft_news('video');
     <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="asset/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="asset/css/style.css">
+   
     
     <!-- script start-->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -64,6 +65,7 @@ $draft_videos = $general->count_draft_news('video');
     <script src="asset/js/pcoded.min.js"></script>
     <script src="asset/js/demo-12.js"></script>
     <script src="asset/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    
     <script>
         
         if ( window.history.replaceState ) {
