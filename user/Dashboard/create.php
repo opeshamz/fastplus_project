@@ -97,10 +97,79 @@ include("header.php");
                                                     </button>
                                                 </div>
                                             </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalll">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </form>
+<form>
+<div class="row p-5" style="margin-top: -30px;">
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModall">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalll">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="colonm ">
+                                                <div class="col-md">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="">
+                                                        template 1
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalll">
+                                                        Preview
+                                                    </button>
+                                                </div>
+                                            </div>
 
+                                                </form>
                                 <!-- template 1️-->
 
                                 <div class="container mt-3">

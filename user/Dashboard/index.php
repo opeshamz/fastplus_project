@@ -156,7 +156,7 @@ if (!isset($year) OR empty($year) OR $year > date('Y')) {$current_year = date('Y
                                                 <div class="card">
 <div class="page-header page-heading">
 	<div class="row">
-	<div class="col-md-9"><h1><i class="fa fa-bar-chart"></i> Content Statistics For <span class="text-info"><?php echo month_name($current_month).', '.$current_year; ?></span></h1></div>
+	<div class="col-md-8"><h5><i class="fa fa-bar-chart"></i> Content Statistics For <span class="text-info"><?php echo month_name($current_month).', '.$current_year; ?></span></h5></div>
 	<div class="col-md-3">
 	<form method="GET" name="menu">
 	<select name="selectedPage" onChange="changePage(this.form.selectedPage)" class="form-control">

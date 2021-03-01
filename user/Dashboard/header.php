@@ -1,8 +1,15 @@
 <?php
-session_start();
-if (!isset($_SESSION['rss_script_admin'])) {
-    header("location:login.php");
-    exit;
+include('../logincontroller.php');
+
+
+if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: ../login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: ../login.php");
 }
 error_reporting(E_ERROR);
 include("../include/config.php");
@@ -137,7 +144,7 @@ $draft_videos = $general->count_draft_news('video');
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                   
-                                    <span>John Doe</span>
+                                    <span><?php echo $_SESSION['email']?></span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -152,13 +159,12 @@ $draft_videos = $general->count_draft_news('video');
                                    
                                     <li>
                                         <a href="auth-normal-sign-in.html">
-                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                        <a href="index.php?logout='1'">logout
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </nav>

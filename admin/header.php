@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['rss_script_admin'])) {
-    header("location:login.php");
-    exit;
-}
+//session_start();
+//if (!isset($_SESSION['rss_script_admin'])) {
+   // header("location:login.php");
+   // exit;
+//}
 error_reporting(E_ERROR);
 include("../include/config.php");
 include("../include/connect.php");

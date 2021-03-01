@@ -14,7 +14,7 @@ NoCSRF::check('login_token', $_POST, true, 60*10, false );
 $username = make_safe(xss_clean($_POST['username']));
 $password = make_safe(xss_clean($_POST['password']));
 if (!empty($email) OR !empty($password)) {
-$sql = "SELECT * FROM admin WHERE username='$username' LIMIT 1";
+$sql = "SELECT * FROM user WHERE username='$username' LIMIT 1";
 $query = $mysqli->query($sql);
 if ($query->num_rows > 0) {
 $row = $query->fetch_assoc();
@@ -48,8 +48,6 @@ $login_token = NoCSRF::generate('login_token');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>RSS Script LV | Login</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -72,6 +70,7 @@ $login_token = NoCSRF::generate('login_token');
     }	
 	$("#login").append(" <span class='fa fa-spinner fa-spin'></span>");
 	var dataString = 'username='+ username + '&password=' + password+'&login_token='+login_token;
+    
 	$.ajax({
       type: "POST",
       url: 'login.php?do=login',
