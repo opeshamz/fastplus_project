@@ -1,10 +1,10 @@
 <?php
 //session_start();
 //if (!isset($_SESSION['rss_script_admin'])) {
-   // header("location:login.php");
-   // exit;
+// header("location:login.php");
+// exit;
 //}
-error_reporting(E_ERROR);
+/*error_reporting(E_ERROR);
 include("../include/config.php");
 include("../include/connect.php");
 include("include/functions.php");
@@ -12,13 +12,14 @@ include("include/general.class.php");
 include("include/upload.class.php");
 include("include/pagination.php");
 include("include/nocsrf.php");
+
 $general = new General;
 $general->set_connection($mysqli);
 $options = $general->get_all_options();
 $parts = Explode('/', $_SERVER["PHP_SELF"]);
 $currenttab = $parts[count($parts) - 1];
 $draft_news = $general->count_draft_news('rss');
-$draft_videos = $general->count_draft_news('video');
+$draft_videos = $general->count_draft_news('video');*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,48 +66,67 @@ $draft_videos = $general->count_draft_news('video');
     <script src="asset/js/demo-12.js"></script>
     <script src="asset/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
-        
-        if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
     </script>
     <!-- script end-->
     <script src="asset/js/raphael/raphael.min.js"></script>
     <script src="asset/js/morris.js/morris.js"></script>
     <!-- Custom js -->
-   
+
     <script type="text/javascript" src="assets/js/script.js"></script>
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
-	
-	<script src="assets/js/ajax_ops-modals.min.js"></script>
-	<script src="assets/js/jasny-bootstrap.min.js"></script>
-	<script src="assets/js/bootstrap-tagsinput.min.js"></script>
-	<script src="assets/js/jquery_checkall.js"></script>
-	
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
+
+    <script src="assets/js/ajax_ops-modals.min.js"></script>
+    <script src="assets/js/jasny-bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/js/jquery_checkall.js"></script>
+
 
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-tagsinput.css">
 </head>
 
 <body>
-<div class="theme-loader">
-    <div class="ball-scale">
-        <div class='contain'>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
@@ -143,23 +163,23 @@ $draft_videos = $general->count_draft_news('video');
                             </li>
                         </ul>
                         <ul class="nav-right">
-                           
+
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                  
+
                                     <span>John Doe</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    
+
                                     <li>
                                         <a href="#">
-                                        <i class="fas fa-key"></i></i>Change password 
+                                            <i class="fas fa-key"></i></i>Change password
                                         </a>
                                     </li>
-                                    
-                                    
-                                   
+
+
+
                                     <li>
                                         <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
@@ -178,8 +198,8 @@ $draft_videos = $general->count_draft_news('video');
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu mt-4">
-                            
-                            
+
+
                             <ul class="pcoded-item pcoded-left-item" id="myDIV">
                                 <li>
                                     <a href="index.php" class="active sidenav">
@@ -195,7 +215,7 @@ $draft_videos = $general->count_draft_news('video');
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                
+
                                 <li class="">
                                     <a href="sources.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-rss fa-fw"></i><b>D</b></span>
@@ -221,6 +241,13 @@ $draft_videos = $general->count_draft_news('video');
                                     <a href="videos.php" class="sidenav">
                                         <span class="pcoded-micon"><i <i class="fas fa-video"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Videos</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="video_ads.php" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-ad"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Video Ads</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -260,13 +287,20 @@ $draft_videos = $general->count_draft_news('video');
                                     </a>
                                 </li>
                                 <li class="">
+                                    <a href="advertisements.php" class="sidenav">
+                                        <span class="pcoded-micon"><i class="fas fa-ad"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Ads</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
                                     <a href="sitemaps.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fa fa-sitemap fa-fw"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Sitemaps</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </nav>
@@ -274,4 +308,3 @@ $draft_videos = $general->count_draft_news('video');
                 </div>
             </div>
         </div>
-    
