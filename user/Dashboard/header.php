@@ -33,8 +33,8 @@ $draft_videos = $general->count_draft_news('video');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Script LV | Dashboard</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>viralgrove</title>
+    <link rel="icon" href="" type="image/x-icon">
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
@@ -48,8 +48,8 @@ $draft_videos = $general->count_draft_news('video');
     <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="asset/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="asset/css/style.css">
-   
-    
+
+
     <!-- script start-->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script type="text/javascript" src="asset/js/jquery/jquery.min.js"></script>
@@ -72,38 +72,57 @@ $draft_videos = $general->count_draft_news('video');
     <script src="asset/js/pcoded.min.js"></script>
     <script src="asset/js/demo-12.js"></script>
     <script src="asset/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    
+
     <script>
-        
-        if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
     </script>
     <!-- script end-->
     <script src="asset/js/raphael/raphael.min.js"></script>
     <script src="asset/js/morris.js/morris.js"></script>
     <!-- Custom js -->
-   
-  
+
+
 </head>
 
 <body>
-<div class="theme-loader">
-    <div class="ball-scale">
-        <div class='contain'>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
-            <div class="ring"><div class="frame"></div></div>
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
@@ -140,27 +159,27 @@ $draft_videos = $general->count_draft_news('video');
                             </li>
                         </ul>
                         <ul class="nav-right">
-                           
+
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                  
-                                    <span><?php echo $_SESSION['email']?></span>
+
+                                    <span></span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    
+
                                     <li>
                                         <a href="#">
-                                        <i class="fas fa-key"></i></i>Change password 
+                                            <i class="fas fa-key"></i></i>Change password
                                         </a>
                                     </li>
-                                    
-                                    
-                                   
+
+
+
                                     <li>
                                         <a href="auth-normal-sign-in.html">
-                                        <a href="index.php?logout='1'">logout
-                                        </a>
+                                            <a href="index.php?logout='1'">logout
+                                            </a>
                                     </li>
                                 </ul>
                             </li>
@@ -174,10 +193,10 @@ $draft_videos = $general->count_draft_news('video');
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu mt-4">
-                            
-                            
-                        <ul class="pcoded-item pcoded-left-item">
-                        <li class="active">
+
+
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
                                     <a href="index.php" class="sidenav">
                                         <span class="pcoded-micon"><i class="fas fa-list"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
@@ -229,4 +248,3 @@ $draft_videos = $general->count_draft_news('video');
                 </div>
             </div>
         </div>
-    
