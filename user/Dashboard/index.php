@@ -14,7 +14,7 @@ if (!isset($_SESSION['email'])) {
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['email']);
-    header("location: ../login.php");
+    header("location: ../index.php");
 }
 error_reporting(E_ERROR);
 include("../include/config.php");
@@ -187,7 +187,7 @@ $draft_videos = $general->count_draft_news('video');
                 </div>
             </div>
             <!-- Page Sidebar Ends-->
-            
+
             <div class="page-body">
 
                 <!-- Container-fluid starts-->
@@ -341,7 +341,7 @@ $draft_videos = $general->count_draft_news('video');
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span></button>
+                                <span aria-hidden="true">×</span></button>
                             <div class="modal-body">
                                 <div class="modal-header"></div>
                                 <div class="contain p-30">

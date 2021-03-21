@@ -1,10 +1,14 @@
 <?php
-include('include/config.php');
-include('include/connect.php');
+//include('include/config.php');
+//include('include/connect.php');
+include('controllersignup.php');
 session_start();
 // LOGIN USER
 
 $con = $mysqli;
+
+
+
 if (isset($_POST['login_user'])) {
 	$email = $con->real_escape_string($_POST['email']);
 	$password = $con->real_escape_string($_POST['password']);
@@ -27,8 +31,8 @@ if (isset($_POST['login_user'])) {
 			$_SESSION['email'] = $email;
 			$_SESSION['id'] = $ID;
 			header('location: Dashboard');
-		} else {
-			array_push($errors, "Wrong Email/password");
 		}
+	} else {
+		array_push($errors, "Wrong Email/Password");
 	}
 }

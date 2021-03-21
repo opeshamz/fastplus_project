@@ -5,4 +5,3 @@ $db_config = array(
 	'pass' => '',
 	'name' => 'fastplus2'
 );
-?>
